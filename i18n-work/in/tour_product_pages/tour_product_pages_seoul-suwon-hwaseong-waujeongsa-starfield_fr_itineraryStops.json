@@ -14,14 +14,16 @@
       ]
     },
     "/itineraryStops/0/category": {
-      "source_en": "UNESCO Fortress"
+      "source_en": "UNESCO Fortress",
+      "tm": "Forteresse UNESCO"
     },
     "/itineraryStops/0/duration": {
       "source_en": "75 min",
       "tm": "75 min"
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Coach drop-off near Janganmun (~5 min)"
+      "source_en": "Coach drop-off near Janganmun (~5 min)",
+      "tm": "Dépose de l’autocar près de Janganmun (~5 min)"
     },
     "/itineraryStops/0/timeUsed/1": {
       "source_en": "Brief group orientation at Janganmun (~5 min)"
@@ -30,34 +32,42 @@
       "source_en": "Walk Janganmun → Hwaseomun via Hwaseo Janggak (~25-30 min)"
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Photo time + reassembly at vehicle (~10 min)"
+      "source_en": "Photo time + reassembly at vehicle (~10 min)",
+      "tm": "Temps de photo et regroupement au véhicule (~10 min)"
     },
     "/itineraryStops/0/timeUsed/4": {
-      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)"
+      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)",
+      "tm": "Petit train touristique Hwaseong Yeolcha en option, Yeonmudae↔Paldalmun (~30 min l’aller ; ₩4 000 pour un adulte)"
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records"
+      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records",
+      "tm": "**Site du patrimoine mondial de l’UNESCO depuis 1997** — la seule cité fortifiée de Corée dont les registres de construction d’origine subsistent"
     },
     "/itineraryStops/0/highlights/1": {
       "source_en": "Built 1794-1796 in 2 years 9 months under King Jeongjo (22nd Joseon king)"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science"
+      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science",
+      "tm": "Conçue par Jeong Yak-yong en combinant les sciences de la fortification coréenne, chinoise et occidentale"
     },
     "/itineraryStops/0/highlights/3": {
       "source_en": "Hwaseong Seongyeok Uigwe construction record — UNESCO Memory of the World 2007"
     },
     "/itineraryStops/0/highlights/4": {
-      "source_en": "5.74 km circumference, 41 strategic military structures"
+      "source_en": "5.74 km circumference, 41 strategic military structures",
+      "tm": "5,74 km de circonférence, 41 ouvrages militaires stratégiques"
     },
     "/itineraryStops/0/highlights/5": {
-      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**"
+      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**",
+      "tm": "La porte nord Janganmun — **la plus grande porte royale existante de Corée**"
     },
     "/itineraryStops/0/highlights/6": {
-      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)"
+      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)",
+      "tm": "1,2 km de marche guidée de Janganmun à Hwaseomun (la section la plus photogénique)"
     },
     "/itineraryStops/0/highlights/7": {
-      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure"
+      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure",
+      "tm": "L’écluse Hwahongmun à 7 arches — l’ouvrage le plus photographié"
     },
     "/itineraryStops/0/highlights/8": {
       "source_en": "FREE for hanbok-wearers + last Wed of month + seniors 65+"
@@ -87,7 +97,8 @@
       "source_en": "Wall path 24 hours (no gates); recommended 09:00-18:00 summer / 09:00-17:00 winter; evening hours May-Oct Wed-Sun 18:00-21:30"
     },
     "/itineraryStops/0/visitBasics/closed": {
-      "source_en": "Open year-round (Hwaseong Trolley closed Mondays)"
+      "source_en": "Open year-round (Hwaseong Trolley closed Mondays)",
+      "tm": "Ouvert toute l’année (le petit train de Hwaseong est fermé le lundi)"
     },
     "/itineraryStops/0/visitBasics/walking": {
       "source_en": "Moderate — wall has steep sections at Seojangdae; stairs at gates; some sections wheelchair-difficult"
@@ -166,14 +177,16 @@
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "Joseon Royal Detached Palace"
+      "source_en": "Joseon Royal Detached Palace",
+      "tm": "Palais royal détaché de l’époque Joseon"
     },
     "/itineraryStops/1/duration": {
       "source_en": "75 min",
       "tm": "75 min"
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "5 min walk from Hwaseong Fortress (Hwaseomun area)"
+      "source_en": "5 min walk from Hwaseong Fortress (Hwaseomun area)",
+      "tm": "5 min de marche depuis la forteresse de Hwaseong (secteur de Hwaseomun)"
     },
     "/itineraryStops/1/timeUsed/1": {
       "source_en": "Arrive in time for **11:00 Royal Guard Changing Ceremony** at Sinpungnu (~15 min)"
@@ -185,10 +198,12 @@
       "source_en": "Photo time + reassembly at vehicle (~15 min)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Optional Royal Guard Changing Ceremony at Sinpungnu Gate (Tue-Sun 11:00 AM, ~15 min, FREE — weather permitting)"
+      "source_en": "Optional Royal Guard Changing Ceremony at Sinpungnu Gate (Tue-Sun 11:00 AM, ~15 min, FREE — weather permitting)",
+      "tm": "Relève de la garde royale en option à la porte Sinpungnu (du mardi au dimanche à 11h00, ~15 min, GRATUIT — si le temps le permet)"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**Korea's largest existing haenggung (detached palace)** — originally 576 rooms"
+      "source_en": "**Korea's largest existing haenggung (detached palace)** — originally 576 rooms",
+      "tm": "**Le plus grand haenggung (palais détaché) existant de Corée** — 576 pièces à l’origine"
     }
   },
   "glossaryTokens": {
@@ -229,5 +244,5 @@
       "⟦G0⟧": "Palais de Hwaseong Haenggung"
     }
   },
-  "tmHits": 13
+  "tmHits": 28
 }
