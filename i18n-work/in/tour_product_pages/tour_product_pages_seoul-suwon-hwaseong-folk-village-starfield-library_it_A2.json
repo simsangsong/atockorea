@@ -49,10 +49,12 @@
       "source_en": "Many Suwon tours skip either Haenggung Palace or the Folk Village. This one keeps both, which is what makes the Joseon-era story actually land — you see the wall, the king's residence inside it, and the village life it was built to govern."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Free admission, paid context"
+      "source_en": "Free admission, paid context",
+      "tm": "Ingresso gratuito, contesto a pagamento"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "Starfield Library is free to enter on your own — but it's much more rewarding with a guide who can explain why a mall built it (Shinsegae's MZ-generation strategy), how it differs from the COEX original, and where the best photo angles are without disturbing readers."
+      "source_en": "Starfield Library is free to enter on your own — but it's much more rewarding with a guide who can explain why a mall built it (Shinsegae's MZ-generation strategy), how it differs from the COEX original, and where the best photo angles are without disturbing readers.",
+      "tm": "Nella biblioteca Starfield si entra gratuitamente anche da soli, ma la visita rende molto di più con una guida che sappia spiegare perché un centro commerciale l’ha costruita (la strategia di Shinsegae rivolta alla generazione MZ), in che cosa differisce dall’originale del COEX e da dove scattare le foto migliori senza disturbare chi legge."
     },
     "/whyTourWorks/routeLogicSections/0/items/3/label": {
       "source_en": "Year-round route"
@@ -87,7 +89,8 @@
       "source_en": "Palace grounds are flat with some courtyard steps. Starfield Library is escalator/elevator accessible across all four floors."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "How the walking load actually feels"
+      "source_en": "How the walking load actually feels",
+      "tm": "Quanto si cammina davvero"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
       "source_en": "bg-emerald-50/80",
@@ -112,7 +115,8 @@
       "source_en": "The wall walk is shorter on cold days; Folk Village indoor performance schedules thin out. Starfield is the natural longer stop."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "When weather and seasons shift"
+      "source_en": "When weather and seasons shift",
+      "tm": "Quando meteo e stagioni cambiano"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
       "source_en": "bg-amber-50/80",
@@ -127,5 +131,5 @@
     }
   },
   "glossaryTokens": {},
-  "tmHits": 5
+  "tmHits": 9
 }
