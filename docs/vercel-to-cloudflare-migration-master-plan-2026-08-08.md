@@ -129,6 +129,7 @@ DNS 존을 먼저 무변경 이관(회색 구름)한 뒤, 트래픽 전환은 **
 - [ ] D1 결정 → Cloudflare 계정 생성, **Workers Paid** 구독($5/월 — 10MB 워커·CPU 30s→5min·크론 250 이 전부 Paid 조건 📄)
 - [ ] API 토큰 발급(스코프: Workers Scripts·Workers Builds·DNS·R2·D1·Durable Objects·Images·Zone Settings) → 로컬 `wrangler login` 또는 `CLOUDFLARE_API_TOKEN`
 - [ ] GitHub 앱 연결(Workers Builds 용, `simsangsong` 레포 권한)
+- [ ] **사장님 5분 — Vercel 대시보드 env 페이지 "이름 목록" 스크린샷**(§F-1 ② — sensitive 여도 이름은 보인다. 그 자리에서 표로 기록) + 같은 김에 Vercel 플랜/과금 화면 1장(§K 확정용)
 - **게이트:** `wrangler whoami` 가 새 계정을 가리킴. (🔴 과거 교훈: whoami 만 믿지 말고 계정 이메일까지 대조)
 
 ### CF1 — 레포 호환성 패스 (Vercel 무영향 — 즉시 머지 가능)
@@ -250,12 +251,68 @@ export default defineCloudflareConfig({
 | CT-11 | (선택, 재발 방지 게이트) `__tests__/audit/workersRuntimeCompat.test.ts` — app/lib 런타임 경로에 sharp import·`readFileSync(process.cwd()` 신규 유입 금지 래칫 | 신규 테스트 | 소 |
 | CT-12 | CF2 판정에 따라 stripe webhook `constructEvent`→`constructEventAsync` | webhook route | 소 |
 
-## §F 환경변수 이식 표 (✅ `.env.local` 실측 — 값 아닌 키만)
+## §F 환경변수 이식 — "복사"가 아니라 "원본 재수집"이다
+
+### F-0 전제 두 가지 (✅ 실측, 2026-08-08 — 사장님 질문에 대한 답)
+
+1. **Vercel 의 sensitive env 는 설계상 아무도 못 꺼낸다** — 대시보드에서도, CLI 에서도, Vercel 자신도
+   값을 다시 보여주지 않는다(쓰기 전용). 우리가 권한이 없어서가 아니라 원래 그런 물건이다.
+   → 이식은 "Vercel 에서 복사"가 아니라 **각 시크릿의 원 발급처(Stripe·Supabase·Resend·각 콘솔)에서
+   재수집**하는 작업이다. 단, **이름 목록은 sensitive 여도 대시보드에 다 보인다** — 이게 열쇠.
+2. **코드가 읽는 env 전수 = ~120개** (`git grep process.env` ✅) vs `.env.local` 49키. 차이 ~70개의
+   정체를 실측했다: **대부분이 "미설정 시 코드 기본값으로 동작"하는 선택 튜너블**(모델명·캡·플래그·
+   STT 파라미터 등 — 안 옮겨도 지금과 동일 동작)이고, 시크릿류도 전부 dev 폴백 설계였다
+   (`TOUR_ROOM_TOKEN_SECRET`·`OPS_GUIDE_SCHEDULE_TOKEN_SECRET`·`AGENT_QUOTE_SECRET` — 미설정 시
+   경고 로그 + dev 폴백 ✅ 코드 확인). 즉 **"로컬에 없는 키" 때문에 앱이 안 켜지는 일은 없다.**
+   문제는 딱 하나 — *라이브에서 실제 설정돼 있는* 키를 다른 값으로 시작하면 그 키로 서명/암호화된
+   기존 산출물(링크·암호문)이 무효가 되는 것. 그 대상과 처치를 F-3/F-4 에 못 박는다.
+
+### F-1 절차 5스텝
+
+1. **필요 목록의 정본 = 코드** (✅ 완료 — ~120키 추출). Vercel 에 있어도 코드가 안 읽으면 죽은 키.
+2. **사장님 5분: Vercel 대시보드 env 페이지에서 "이름 목록" 스크린샷** (값 말고 이름·대상환경은
+   sensitive 여도 다 보인다) → 그 자리에서 표로 기록. 이것으로 "라이브에 실제 설정된 키" 확정 —
+   특히 F-3 후보들과 `UPSTASH_REDIS_REST_URL`(설정돼 있으면 우리가 모르던 Redis 가 있는 것)의 존재 판정.
+3. **값 수집 우선순위:**
+   - (a) `.env.local` 49키 → 그대로 사용 (로컬 dev 가 실 Stripe·실 DB·실 Resend 로 돌아온 이력 =
+     프로덕션과 같은 값일 개연성 높음. 개연성은 증거가 아니므로 검증은 F-4)
+   - (b) 발급처 콘솔 재조회: Supabase 서비스롤 키·Stripe 시크릿/웹훅 서명(대시보드 reveal)·Resend·
+     각종 API 키·Upstash — 로그인만 하면 언제든 다시 보인다
+   - (c) 우리가 양끝을 다 제어해서 **그냥 새로 정하면 되는 것**: `CRON_SECRET`(앱+디스패처 동시 교체)·
+     Telegram webhook secret(`setWebhook` 재호출로 새 값 지정)
+   - (d) 발급처 없는 자체 난수 + 값 복구 불가 → **로테이션**(F-3 — 지금은 영향 미미)
+   - (e) **최후 수단**(교체 불가인데 값 복구가 꼭 필요한 키가 남을 때만): 배포 권한은 살아 있으므로
+     (git push → vercel[bot] 자동 배포), `requireAdmin`+일회용 헤더로 잠근 임시 라우트가 **지정 키
+     몇 개만** 사장님 화면에 표시 → 읽고 → 즉시 revert. Vercel 대시보드가 해 주던 일을 우리 손으로
+     하는 것뿐이지만, 진짜 필요할 때만 쓴다.
+4. **특별 관리 키 검증 — 값 비교가 아니라 기능으로 (F-4)**
+5. **CF 주입:** NEXT_PUBLIC 9종=Workers Builds 빌드 env(번들에 구워짐), 나머지=`wrangler secret put`
+   일괄 스크립트(.env.local 을 읽어 키별 put, 값은 화면에 안 찍음) + 키 존재 대조 스크립트.
+
+### F-2 이식 표 (✅ `.env.local` 실측 — 값 아닌 키만)
 
 - **빌드 시(Workers Builds 빌드 env, NEXT_PUBLIC 은 번들에 인라인):** `NEXT_PUBLIC_SUPABASE_URL` · `NEXT_PUBLIC_SUPABASE_ANON_KEY` · `NEXT_PUBLIC_APP_URL` · `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` · `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` · `NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID` · `NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY` · `NEXT_PUBLIC_REVIEW_FLOW_PREVIEW` · `NEXT_PUBLIC_TOUR_MODE_V1`
 - **런타임 시크릿(`wrangler secret put`):** `SUPABASE_SERVICE_ROLE_KEY` · `STRIPE_SECRET_KEY` · `STRIPE_WEBHOOK_SECRET` · `RESEND_API_KEY` · `RESEND_WEBHOOK_SECRET` · `RESEND_FROM_EMAIL` · `GEMINI_API_KEY` · `ANTHROPIC_API_KEY` · `OPENAI_API_KEY` · `GROQ_API_KEY` · `GOOGLE_MAPS_API_KEY` · `KAKAO_REST_API_KEY` · `KAKAO_MOBILITY_REST_API_KEY` · `TOUR_API_KEY` · `VISIT_JEJU_TOUR_API` · `EXCHANGE_RATE_API_KEY` · `LINE_CHANNEL_ID` · `LINE_CHANNEL_SECRET` · `CRON_SECRET`(디스패처 워커에도) · `ADMIN_SUPPORT_API_TOKEN` · `IP_HASH_SALT` · `OPS_INBOUND_WEBHOOK_SECRET` · `OPS_GUIDE_PII_ENC_KEY`(🔴 교체 금지 키) · `WEB_PUSH_VAPID_PRIVATE_KEY` · `WEB_PUSH_CONTACT` · `SLACK_QUOTE_WEBHOOK_URL` · `TELEGRAM_BOT_TOKEN` · `TELEGRAM_BOOKING_CHAT_ID` · `PEXELS_API_KEY` · `UNSPLASH_ACCESS_KEY` · `UNSPLASH_SECRET_KEY` · `UNSPLASH_VERIFICATION_CODE` · `PIXABAY_API_KEY` · `FLICKR_API_KEY` · `FLICKR_SECRET_KEY` · `JEJU_UPSERT_SUPABASE` · `TOUR_PRODUCT_USE_SUPABASE` · `CHAT_AUDIT_LOG` · `SEED_PLACES_SECRET`(스크립트용 — 필요 시)
-- **버리는 것:** `VERCEL_OIDC_TOKEN`(Vercel CLI 잔재)
-- 🔴 **주의:** Vercel 프로덕션 env 가 `.env.local` 과 다를 가능성 — 대시보드 접근이 안 되므로, **코드 grep 으로 `process.env.*` 전수 목록을 뽑아 위 표와 대조**하는 검증 스텝을 CF5 에 포함(누락 키 = 기동은 되는데 기능이 조용히 죽는 유형).
+- **버리는 것:** `VERCEL_OIDC_TOKEN`(Vercel CLI 잔재) + Vercel 이름 목록(F-1 ②)에서 코드가 안 읽는 죽은 키 전부
+
+### F-3 서명·암호화 시크릿 — 라이브 값과 달라지면 무엇이 죽나 (✅ 코드 확인)
+
+| 키 | 서명/암호화 대상 | 값 복구 실패 시(=로테이션) 영향 | 처치 |
+|---|---|---|---|
+| `TOUR_ROOM_TOKEN_SECRET`(+`_PREV`) | 투어룸 장문 토큰(`?rt=`)·동반자·좌석 클레임/체크인·QR 논스 | 기존 발송 링크 무효. **현재 실발송 0(사장님 결정)·입장은 DB 원장 코드(PR #814)라 영향 미미**. 재발급 도구 존재(/reinvite·어드민 발송) | 라이브 값 복구되면 `_PREV` 에 넣어 무단절 로테이션(이중 검증 슬롯이 이미 코드에 있다 ✅). 복구 안 되면 새 값+링크 재발급 |
+| `OPS_GUIDE_SCHEDULE_TOKEN_SECRET`(+`_PREV`) | 가이드 셀프 스케줄 링크 `/g/schedule/[token]` | 기발송 링크 무효 → 재발송 버튼으로 회복 | 동일(_PREV 슬롯 존재) |
+| `AGENT_QUOTE_SECRET` | 에이전트 견적 토큰 | 미결 견적 링크 무효 | 동일 |
+| 🔴 `OPS_GUIDE_PII_ENC_KEY` | **가이드 PII 암호문(DB 저장)** — CLAUDE.md "한 번 넣으면 교체 금지" | **로테이션 불가** — 다른 값이면 기존 암호문 영구 복호 불능 | `.env.local` 에 있음 ✅. F-4 복호화 테스트로 프로덕션 동일 여부 판정. 불일치면 최후 수단(F-1 ③e) 1순위 |
+| `WEB_PUSH_VAPID_PRIVATE_KEY`(+공개키) | 웹푸시 구독 | 키쌍 바꾸면 **기존 푸시 구독 전멸**(재구독 필요) | `.env.local` 에 있음 ✅. 공개키는 라이브 클라이언트 번들에 노출되므로 라이브 vs 로컬 문자열 대조로 즉시 판정(F-4) |
+| `STRIPE_WEBHOOK_SECRET` | webhook 서명 검증 | — (Stripe 대시보드에서 언제든 reveal) | 같은 엔드포인트 URL 유지 = 같은 시크릿. 재조회 (b) |
+| `IP_HASH_SALT` | 분석용 IP 해시 | 해시 연속성만 끊김(치명 아님) | 로컬 값 사용 |
+
+### F-4 검증 — 값을 눈으로 비교하지 않고 판정하는 법
+
+- 🔴 **PII 키:** 라이브 DB 의 암호화된 가이드 PII 1행을 **로컬 키로 복호화하는 스크립트** → 성공=로컬 값이 프로덕션과 동일 확정 / 실패=불일치 조기 발견(조용한 데이터 손실을 이사 전에 잡는다)
+- **VAPID:** 라이브 사이트 번들 안의 공개키 문자열 vs 로컬 `NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY` 대조(공개값이라 안전)
+- **Stripe/Supabase/Resend 등:** 스테이징 워커에서 기능 호출 1건씩(PI 목록 조회·서비스롤 쿼리·테스트 발송) — §I 스모크가 곧 키 검증
+- **토큰 시크릿:** 라이브에서 발급된 룸 토큰 1개를 스테이징 워커가 검증 성공하는지(성공=값 동일)
 
 ## §G DNS·존 설정
 
