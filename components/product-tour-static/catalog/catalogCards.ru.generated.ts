@@ -22,8 +22,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Побережье",
         "Культурные деревни"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
       "priceLabel": "",
       "shortCardDescription": "День в Пусане в мини-группе, построенный вокруг побережья и деревень на холмах: приморский храм Хэдон Ёнгунса в его тихое утреннее окно, бесплатная смотровая площадка Таритдоль со стеклянным полом в Чхонсапхо, поездка на Sky Capsule по парку «Блюлайн» от Чхонсапхо до Мипхо (билет включён или не включён — выбираете при бронировании), обед, культурная деревня Камчхон и малоизвестная деревня фресок Такпатколь, где бесплатный монорельс скользит вверх вдоль «лестницы желаний». Все ключевые точки, кроме опциональной капсулы, — с бесплатным входом."
     },
@@ -101,8 +101,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Сораксан",
         "Ледяная стена"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
       "priceLabel": "",
       "shortCardDescription": "Идёт только в разгар зимы: Сораксан под снегом, заиндевевшие аллеи острова Нами и 25-метровая ледяная стена, которую жители деревни в Капхёне наращивают на скале в долине каждый январь."
     },

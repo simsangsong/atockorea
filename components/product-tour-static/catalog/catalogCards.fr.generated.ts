@@ -22,8 +22,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Côtier",
         "Villages culturels"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
       "priceLabel": "",
       "shortCardDescription": "Une journée à Busan en petit groupe, construite autour de la côte et des villages perchés : le temple marin Haedong Yonggungsa dans son créneau matinal tranquille, l'observatoire Daritdol de Cheongsapo et son plancher de verre gratuit, le trajet en Sky Capsule du Blueline Park de Cheongsapo à Mipo (billet inclus ou non inclus — à choisir lors de la réservation), le déjeuner, le village culturel de Gamcheon, et le méconnu village de fresques Dakbatgol où un monorail gratuit gravit l'« escalier des vœux ». Tous les sites majeurs sont en entrée libre, à l'exception de la capsule optionnelle."
     },
@@ -101,8 +101,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Seoraksan",
         "Mur de glace"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
       "priceLabel": "",
       "shortCardDescription": "Ne fonctionne qu'au cœur de l'hiver : le Seoraksan sous la neige, les allées d'arbres givrées de l'île de Nami, et le mur de glace de 25 mètres que les villageois de Gapyeong font grandir chaque janvier sur une paroi rocheuse de la vallée."
     },

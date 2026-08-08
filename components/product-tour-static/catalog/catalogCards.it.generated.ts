@@ -22,8 +22,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Costa",
         "Villaggi culturali"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
       "priceLabel": "",
       "shortCardDescription": "Una giornata a Busan in piccolo gruppo costruita intorno alla costa e ai villaggi collinari: il tempio sul mare Haedong Yonggungsa nella sua quieta finestra mattutina, l'osservatorio Daritdol di Cheongsapo con pavimento di vetro e ingresso gratuito, la corsa in Sky Capsule del Blueline Park da Cheongsapo a Mipo (biglietto incluso o escluso — a vostra scelta alla prenotazione), il pranzo, il villaggio culturale di Gamcheon e il poco conosciuto villaggio dei murales Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. Ogni tappa principale, tranne la capsula opzionale, è a ingresso gratuito."
     },
@@ -101,8 +101,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Seoraksan",
         "Parete di ghiaccio"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
       "priceLabel": "",
       "shortCardDescription": "Si svolge solo in pieno inverno: il Seoraksan sotto la neve, i viali alberati brinati dell'isola di Nami e la parete di ghiaccio di 25 metri che gli abitanti di un villaggio di Gapyeong fanno crescere ogni gennaio su una parete rocciosa della valle."
     },
