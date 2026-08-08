@@ -32,7 +32,8 @@
       ]
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Biblioteca Starfield di Suwon"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "Seoul Suwon heritage tour"
@@ -62,14 +63,16 @@
       "source_en": "From an 18th-century UNESCO fortress to one of Korea's most photographed contemporary libraries to a peaceful mountain Buddhist temple—three sides of Korea in one balanced day."
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Value"
+      "source_en": "Photo Value",
+      "tm": "Valore fotografico"
     },
     "/glanceItems/0/value": {
       "source_en": "Excellent",
       "tm": "Eccellente"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenic"
+      "source_en": "Scenic",
+      "tm": "Panorami"
     },
     "/glanceItems/1/value": {
       "source_en": "Good",
@@ -84,21 +87,24 @@
       "tm": "Moderato"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Safety"
+      "source_en": "Rain Safety",
+      "tm": "Sicurezza con la pioggia"
     },
     "/glanceItems/3/value": {
       "source_en": "Good",
       "tm": "Buono"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Fit"
+      "source_en": "Family Fit",
+      "tm": "Adatto alle famiglie"
     },
     "/glanceItems/4/value": {
       "source_en": "Good",
       "tm": "Buono"
     },
     "/glanceItems/5/label": {
-      "source_en": "Balance"
+      "source_en": "Balance",
+      "tm": "Equilibrio"
     },
     "/glanceItems/5/value": {
       "source_en": "Balanced",
@@ -159,37 +165,45 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Suwon Heritage Day"
+      "source_en": "Suwon Heritage Day",
+      "tm": "Giornata del patrimonio di Suwon"
     },
     "/headlineLine2": {
       "source_en": "Hwaseong, Waujeongsa & Starfield"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
+      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable.",
+      "tm": "Punti di ritrovo fissi: non è previsto il prelievo in hotel. I ritardatari non possono essere attesi e non hanno diritto al rimborso."
     },
     "/pickup_dropoff/return/0/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Stazione ⟦G0⟧ (uscita 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Stazione Hongik Univ. (uscita 8)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Stazione Hongik Univ. (uscita 8)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "La preghiamo di arrivare 10 minuti prima dell’orario di partenza."
     },
     "/pickup_dropoff/departure/1/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Stazione ⟦G0⟧ (uscita 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "La preghiamo di arrivare 10 minuti prima dell’orario di partenza."
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -275,7 +289,8 @@
       "source_en": "Light rain workable; heavy rain reduces the fortress walk"
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What to wear & bring"
+      "source_en": "What to wear & bring",
+      "tm": "Come vestirsi e cosa portare"
     },
     "/practicalAccordionItems/3/content/0": {
       "source_en": "Comfortable walking shoes with grip (essential for Hwaseong and Waujeongsa)"
@@ -372,5 +387,5 @@
       "⟦G0⟧": "Palazzo di Hwaseong Haenggung"
     }
   },
-  "tmHits": 23
+  "tmHits": 38
 }

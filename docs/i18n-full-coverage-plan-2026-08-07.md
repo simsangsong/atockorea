@@ -571,6 +571,48 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 전세 2종(358+313) · 수원 2종(390+415) · 설악 2종(387+417) · 부산 소그룹(698) = **7슬러그 발행**
 (+ 앞 세션의 gwangmyeong). 전부 커버리지 100% · fail 0 · 문자혼입 0.
 
+🔶 **it 진행 중 — 3/8 발행(2026-08-08).** 부산 전세(358) · 서울근교 10hr(313) · 수원 광명동굴(430).
+전부 커버리지 100% · fail 0 · 문자혼입 0. 🔴 **남은 5슬러그(DB 로 잰 값):**
+`seoul-suwon-hwaseong-waujeongsa-starfield`(390 세그 · **in/ 재추출 완료**) →
+`seoul-suwon-hwaseong-folk-village-starfield-library` → `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` →
+`seoul-seoraksan-nami-island-morning-calm-day-tour` → `busan-small-group-sightseeing-tour-cruise-passengers`(698).
+**수원 와우정사부터 재개하라** — 입력이 이미 `in/` 에 있고 TM 181/390 이 채워져 있다.
+
+### 🔴 이탈리아어 관례 (2026-08-08, S17 3슬러그에서 확정)
+
+🔴 **경어체 «Lei» 다.** 발행된 ru·it 행 전체가 그렇다 — `Scelga`·`il Suo percorso`·`Progetti`.
+반말/평서체로 쓰면 이미 라이브인 행들과 어긋난다. **쓰기 전에 기존 행을 확인한 것이고, 추측이 아니다.**
+
+| | it |
+|---|---|
+| 천단위 | `₩8.000` · `30.000 KRW` (점 — 독일어와 같다) |
+| 소수 | `11,5 ore` · `4,3 miliardi` · `5,74 km` |
+| 시각 | `09:00–18:00` · `ore 17:00` |
+| USD | `53 US$ a persona (invece di 59 $, 10% di sconto)` (후치) |
+| 갤러리 | `— immagine della galleria N` / `— foto N` |
+| UNESCO | `patrimonio mondiale UNESCO` · `Memoria del mondo UNESCO` |
+
+**이탈리아어 고정 어휘** — autista-guida (abilitato) · noleggio auto privato · prelievo in hotel ·
+rientro(drop-off) · pullman(coach) · tappa(stop) · mura / camminamento(fortress wall) ·
+haenggung = palazzo distaccato · cambio della guardia reale · scaffalature(bookshelves) · food hall ·
+villaggio folcloristico coreano · funambolismo jultagi · Giardino della quiete mattutina(Morning Calm) ·
+isola di Nami · Grotta di Gwangmyeong · Osservatorio di Dora · Fortezza di Suwon Hwaseong ·
+tempio sul mare · villaggio dei murales · mercato del pesce · crocierista · terminal di croriera.
+
+🔴 **it 에서 fail 이 난 것은 전부 「숫자를 낱말로 풀어쓴」 자리다 — 3슬러그 연속.**
+`each hour past 9`→`oltre la nona` (3건) · `adult 1-day`→`biglietto giornaliero` ·
+`60th-birthday`→`sessantesimo compleanno` (2건). 해법은 서수를 숫자로:
+**`oltre le 9 ore` · `biglietto di 1 giorno` · `60° compleanno` · `2ª generazione` · `3° tunnel` · `19° posto`.**
+⚠ **원문이 낱말이면 낱말로 옮겨도 된다** — `'second-generation'`(따옴표 낱말) → `«seconda generazione»`,
+`2nd-generation`(숫자) → `2ª generazione`. **같은 페이지에 둘 다 있다.**
+
+⚠ **it 는 G8(길이비) 플래그가 fr 보다 훨씬 많다**(같은 슬러그에서 82 vs 58). 경어체 «Lei» 와
+이탈리아어의 다어절 구문 탓이고 **결함이 아니다** — 최악값 1,67·중앙값 1,43 을 실측으로 확인했다.
+숫자가 크다고 놀라서 문장을 깎지 마라.
+
+⚠ **발행된 it 행에 오역이 하나 있다** — `jeju-island-private-car-charter-tour` 의 `Charter Tour` 가
+**`a Jeju`** 로 들어가 있다(제목이 사라진 꼴). UPDATE 금지라 그대로 뒀고 **베끼지도 않았다.** 별도 티켓감.
+
 🔴 **다음은 it 이다 — 대상 8슬러그가 de·fr 과 정확히 같다.**
 `seoul-suwon-hwaseong-{gwangmyeong-cave,folk-village,waujeongsa}-starfield*` ·
 `seoul-seoraksan-{nami-island-morning-calm,naksansa-temple-naksan-beach}*` ·
@@ -585,7 +627,7 @@ ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만
 |---|---|---|---|---|
 | **de** | **21/21** | **0** | — | — (+ 구행 7건은 사장님 결정 대기) |
 | **fr** | **21/21** | **0** | — | — |
-| **it** | 13/21 | 8 | 82 | 271,234 |
+| **it** | **16/21** | 5 | 55 | ≈192,000 (3슬러그 발행 완료) |
 | **ru** | 13/21 | 8 | 82 | 270,610 (은퇴 `jeju-cruise-shore-excursion-bus-tour` 14u/48,131자 제외) |
 
 슬러그별(fr 실측 · it/ru 도 ±1% 안):
