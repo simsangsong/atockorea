@@ -368,7 +368,8 @@ node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('i18n-work/ma
 cat > .probe.mjs <<'EOF'
 import fs from 'fs';
 import { createClient } from '@supabase/supabase-js';
-const sb = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+// ⚠ 이 워크트리 .env.local 은 SUPABASE_URL 이 없을 수 있다 — 둘 다 받아라(안 그러면 supabaseUrl is required)
+const sb = createClient(process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const IND = 'i18n-work/in/tour_product_pages', per = {};
 for (const f of fs.readdirSync(IND)) {
   const m = f.match(/^tour_product_pages_(.+)_(de|fr|it|ru)_[^_]+\.json$/);
@@ -574,12 +575,53 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 **원문이 같으니 de 생성기의 `NEW` 맵 키를 그대로 재사용하고 값만 프랑스어로 바꾸면 된다.**
 it · ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만 범위 밖).
 
+### 🔴 잔여 실측 (2026-08-08, DB 조인으로 잰 것 — 매니페스트 아님)
+
+| 로케일 | 발행가능 | unit | 손번역 글자 |
+|---|---|---|---|
+| **de** | **0** | — | — (8슬러그 발행 완료 + 구행 7건은 결정 대기) |
+| **fr** | 7 | 73 | 238,365 |
+| **it** | 8 | 82 | 271,234 |
+| **ru** | 8 | 82 | 270,610 (은퇴 `jeju-cruise-shore-excursion-bus-tour` 14u/48,131자 제외) |
+| | **23슬러그** | **237** | **≈780,000** |
+
+슬러그별(fr 기준 · it/ru 도 ±1% 안):
+`busan-private-car-charter-city-tour` 8u/22,166 → `seoul-suburbs-private-chartered-car-10hr` 8u/24,743 →
+`seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` 9u/32,869(fr ✅) →
+`seoul-suwon-hwaseong-waujeongsa-starfield` 11u/34,079 →
+`seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` 11u/34,132 →
+`seoul-seoraksan-nami-island-morning-calm-day-tour` 10u/34,677 →
+`seoul-suwon-hwaseong-folk-village-starfield-library` 10u/35,577 →
+`busan-small-group-sightseeing-tour-cruise-passengers` 15u/52,991.
+**작은 것부터** 잡으면 세션당 1~2슬러그가 현실적이다.
+
 배치는 **슬러그군 × 한 로케일**로 잡아라(§6-3′ 에 실측표). 권장 순서:
-**① de 8슬러그 ✅ → ② fr 8슬러그 → ③ it 8슬러그 → ④ ru 8슬러그.**
+**① de 8슬러그 ✅ → ② fr 나머지 7 → ③ it 8 → ④ ru 8.**
 ⚠ 🔴 **한 슬러그를 끝낼 때마다 `verify` 를 돌리고 다음 슬러그를 재추출하라.**
 수원 3번째에서 이 한 번의 재추출이 **손번역을 31,596 → 22,707자로 줄였다**(§6-3′ 표).
 ⚠ **다만 재추출 이득은 「같은 상품군」일 때만 난다** — 전세 2종은 둘 다 프라이빗 차터인데도
 공유 세그먼트가 **2개뿐**이었다(설악 2종은 78개). 갈림선은 카테고리가 아니라 **상품군**이다.
+
+### 🔴 한 슬러그를 처리하는 레시피 (2026-08-08 에 9슬러그를 이대로 돌렸다 — 그대로 따라라)
+
+1. **재추출** — `node --env-file=.env.local --import tsx scripts/i18n/extract.ts --locale=<loc> --slugs=<slug>`
+2. **미해결 원문 덤프** — 아래 한 줄. `[GAL]` 로 갈라 두면 갤러리 템플릿은 눈으로 안 봐도 된다.
+   ```bash
+   node -e "const fs=require('fs');const D='i18n-work/in/tour_product_pages';const seen=new Set();for(const f of fs.readdirSync(D).filter(x=>x.includes('<slug>_<loc>_')).sort()){const j=JSON.parse(fs.readFileSync(D+'/'+f,'utf8'));console.log('### '+j.chunk);for(const[p,s]of Object.entries(j.segments)){if(s.tm!=null)continue;if(seen.has(s.source_en))continue;seen.add(s.source_en);console.log(/galleryItems\//.test(p)?'[GAL] '+JSON.stringify(s.source_en):p+'\t'+JSON.stringify(s.source_en));}}"
+   ```
+3. **생성기를 스크래치패드에 쓰고**(`NEW` 맵 = 영문 원문 → 번역 · `SUB` = 갤러리 치환 · `RULE6` = 기계 키)
+   레포 루트에 **점파일로 복사해 실행**(스크래치패드에선 `@supabase/supabase-js` 가 안 잡힌다), 끝나면 지운다.
+   🔴 **미해결이 하나라도 있으면 아무 파일도 쓰지 말고 exit 1** — 이 가드가 이번에만 76·63·3·2·1건을 잡았다.
+   🔴 **heredoc 으로 만들지 마라** — 복합 명령 안에서 `<<'EOF'` 가 깨진다. Write 도구를 써라.
+4. **verify** — `npx tsx scripts/i18n/verify.ts --locale=<loc>` → **fail 0 이 될 때까지** 생성기를 고쳐 재실행.
+   fail 이 「그 외 N건」에 숨으면 리포트에서 직접 꺼내라:
+   ```bash
+   node -e "const r=require('fs').readFileSync('i18n-work/reports/verify-<loc>/verify.json','utf8');for(const u of JSON.parse(r).reports){if(!String(u.unitId).includes('<slug>'))continue;for(const f of u.findings||[])if(f.severity==='fail')console.log(u.unitId,JSON.stringify(f))}"
+   ```
+5. **문자 혼입 스캔**(§7-7) — `i18n:verify` 가 못 잡는다. 매번 돌려라.
+6. **발행** — `node --env-file=.env.local ./node_modules/tsx/dist/cli.mjs scripts/i18n/apply.ts --locale=<loc> --slugs=<slug> --apply`
+   (⚠ 맨 `npx tsx` 는 env 를 못 읽어 죽는다. `--partial` 금지.)
+7. **커밋** — `i18n-work/out/... in/... tm/<loc>.json` 경로 명시(⚠ `git add -A` 금지, 워크트리 경합).
 
 ### 🔴 S15c 의 발견 — **매니페스트로 남은 일을 세면 틀린다. 판정은 DB 다.**
 
@@ -615,6 +657,31 @@ it · ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙
 
 용어는 **지어내지 말고 이미 발행된 ru 행에서 가져와라**(§6-5 아래 「ru 착수 메모」).
 슬러그 하나가 100% 되면 그 자리에서 발행하라(`--partial` 금지).
+
+### 🔴 fr·de 관례 기록 (2026-08-08) — **지어내지 말고 여기서 가져다 써라**
+
+용어는 **이미 발행된 행에서 뽑았다.** 새 슬러그에서 같은 개념을 만나면 아래를 쓴다.
+
+**공통 서식**
+| | de | fr |
+|---|---|---|
+| 천단위 | `₩8.000` (점) | `₩8 000` (공백 — 기존 fr 행 4개가 이미 이 형태, G3 통과 확인) |
+| 소수 | `7,4 km` | `7,4 km` |
+| 시각 | `09:00–18:00 Uhr` | `09h00–18h00` |
+| 갤러리 | `— Galeriebild N` / `— Foto N` | `— image de galerie N` / `— photo N` |
+| UNESCO 세계유산 | `UNESCO-Weltnaturerbe` / `-Welterbe` | `patrimoine mondial de l'UNESCO` |
+
+**독일어 고정 어휘** — Fahrer-Guide(driver-guide) · Privater Autocharter · Limousine oder SUV ·
+Van der Mittelklasse · Flughafen Gimhae/Incheon · Kreuzfahrtterminal · Ankunftshalle · Ausschiffung ·
+All-aboard-Zeit · Landausflug · Jagalchi-Fischmarkt · Lavaröhre · Haenyeo-Tauchvorführung ·
+Garten der Morgenstille · Nami-Insel · Reiseleitung(guide, 기사 아님).
+
+**프랑스어 고정 어휘** — autocar(coach) · guide · forteresse · palais détaché(haenggung) ·
+grotte(cave) · petit groupe · Mémoire du monde · relève de la garde royale · rayonnages(bookshelves) ·
+food hall · niveau B1 / 4e étage(층은 **숫자를 살려서**).
+
+🔴 **fr 은 `2nd-generation`→`deuxième`, de 는 `1F/2F`→`Erdgeschoss/1. Stock` 에서 G3 로 죽었다.**
+로마 세기(`18th-century`→`XVIIIe siècle`)는 흡수되지만 **서수를 낱말로 풀면 안 된다.**
 
 ### 🔴 ru 트랙 종료 기록 (2026-08-07, S3d~S3f) — de/fr/it 를 할 때 그대로 쓴다
 
