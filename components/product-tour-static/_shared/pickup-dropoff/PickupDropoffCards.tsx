@@ -5,7 +5,10 @@ import { ChevronRight, MapPin } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
-import { isClockTime } from "@/components/product-tour-static/_shared/pickupDropoffTypes";
+import {
+  inferReturnBand,
+  isClockTime,
+} from "@/components/product-tour-static/_shared/pickupDropoffTypes";
 import type {
   PickupDropoffPoint,
   PickupDropoffSection,
@@ -18,17 +21,6 @@ type PickupDropoffCardsProps = {
 
 function formatTemplate(template: string, count: number): string {
   return template.replace("{count}", String(count));
-}
-
-function inferReturnBand(notes: string[] | string | undefined): string | null {
-  if (!notes?.length) return null;
-  // Some tour rows historically carry `notes` as a single string instead of
-  // string[] — a latent crash that only surfaced once the page actually SSR'd.
-  const joined = Array.isArray(notes) ? notes.join(" ") : String(notes);
-  const match =
-    joined.match(/Return usually runs around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i) ??
-    joined.match(/around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i);
-  return match?.[1] ?? null;
 }
 
 /**
@@ -91,7 +83,8 @@ export function PickupOnlyCards({ pickupDropoff, sectionUi }: PickupDropoffCards
   if (!pickupDropoff || pickupPoints.length === 0) return null;
 
   const first = pickupPoints[0];
-  const isPort = (first?.type ?? "").toLowerCase() === "port";
+  const firstType = (first?.type ?? "").toLowerCase();
+  const isPort = firstType === "port" || firstType === "cruise_terminal";
   const title = isPort
     ? (sectionUi.pickupPortCardTitle ?? "Port pickup")
     : (sectionUi.pickupCardTitle ?? "Pickup");
