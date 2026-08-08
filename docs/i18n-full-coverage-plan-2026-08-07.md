@@ -571,13 +571,11 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 전세 2종(358+313) · 수원 2종(390+415) · 설악 2종(387+417) · 부산 소그룹(698) = **7슬러그 발행**
 (+ 앞 세션의 gwangmyeong). 전부 커버리지 100% · fail 0 · 문자혼입 0.
 
-🔶 **it 진행 중 — 5/8 발행(2026-08-08).** 부산 전세(358) · 서울근교 10hr(313) · 수원 광명동굴(430) ·
-수원 와우정사(390) · 수원 민속촌(415). 전부 커버리지 100% · fail 0 · 문자혼입 0.
-**수원 3종이 끝났으니 다음은 설악 2종 → 부산 크루즈다.** 🔴 **남은 3슬러그:**
-`seoul-seoraksan-naksansa-temple-naksan-beach-day-trip`(387 세그) →
-`seoul-seoraksan-nami-island-morning-calm-day-tour`(417) →
-`busan-small-group-sightseeing-tour-cruise-passengers`(698 · 가장 큼, 마지막에).
-🔴 **설악 2종은 형제다** — 낙산사를 먼저 하고 남이섬을 재추출하면 TM 이 크게 붙는다(fr 실측 193/417).
+✅ **S17 도 끝났다 — 🔴 이탈리아어도 발행 가능한 슬러그가 0개다(2026-08-08).**
+전세 2종(358+313) · 수원 3종(430+390+415) · 설악 2종(387+417) · 부산 크루즈(698) = **8슬러그 발행**,
+전부 커버리지 100% · fail 0 · 문자혼입 0. **de·fr·it 세 로케일이 21/21 이다.**
+🔴 **설악 2종의 형제 효과는 it 에서도 그대로 재현됐다** — 낙산사를 먼저 발행하고 남이섬을
+재추출하니 **TM 193/417**, fr 실측과 같은 수치다. 부산 크루즈도 258/698(37%)로 붙었다.
 
 ✅ **수원 민속촌이 슬러그군 배치의 값을 재확인했다 — TM 279/415(67%), fr 과 같은 수치.**
 같은 이득이 로케일을 바꿔도 재현된다. 크기순으로 갔으면 흩어졌을 값이다.
@@ -623,6 +621,29 @@ tempio sul mare · villaggio dei murales · mercato del pesce · crocierista · 
 ⚠ **발행된 it 행에 오역이 하나 있다** — `jeju-island-private-car-charter-tour` 의 `Charter Tour` 가
 **`a Jeju`** 로 들어가 있다(제목이 사라진 꼴). UPDATE 금지라 그대로 뒀고 **베끼지도 않았다.** 별도 티켓감.
 
+### 🔴 S17 후반의 발견 — 게이트가 못 잡는 오타 계열이 둘 있다
+
+**① 앞 로케일의 언어가 새어 들어온다.** it 산출물에 프랑스어 단어가 그대로 들어가 있었다 —
+`dépose`(→`fermata di rientro`) · `adossato`(→`addossato`, 이탈리아어는 d 가 둘). fr 을 막 끝낸
+직후라 손이 그쪽으로 갔다. **G1~G11 은 전부 통과한다** — 철자법 게이트가 없기 때문이다.
+🔴 **그리고 이건 이미 발행된 it 행 둘에 들어가 있다**(`seoul-suburbs-private-chartered-car-10hr` 의
+`scegle`, `seoul-suwon-hwaseong-folk-village-starfield-library` 의 `dépose` 2건). UPDATE 금지라
+그대로 두었다 — **위 제주 오역과 같은 티켓으로 묶어라.**
+
+**② 🔴 산출물만 고치면 되살아난다 — TM 을 같이 고쳐야 한다.**
+`verify` 는 **기존 해시의 값을 덮어쓰지 않는다**(`TM 2663 → 2663 (+0)` 을 보고도 값이 갱신됐다고
+믿었는데 아니었다). 즉 **오타를 고친 뒤 verify 를 다시 돌려도 TM 에는 옛 문장이 남아**,
+다음 슬러그에서 TM 적중으로 되살아난다. **생성기 · 산출물 · `i18n-work/tm/<loc>.json` 세 곳을 다 고쳐라.**
+이번엔 16개 엔트리를 직접 패치했다(fr 에서도 `24 h sur 24` 로 같은 일을 겪었다 — 재발이다).
+
+**③ 🔴 층 표기는 번역하지 말고 그대로 둬라 — `1F`·`2F`·`5F`.**
+한국의 1F 는 지상층이라 「piano terra」로 옮기면 숫자가 사라지고 의미도 흔들린다.
+자갈치는 **1F 에서 사 2F 에서 조리**하는 게 상품 설명의 핵이라 여기서 틀리면 안내가 무너진다.
+
+**④ 10년대 표기도 숫자다** — `early 2000s` → `primi anni Duemila` 는 G3 플래그가 떴다.
+`primi anni 2000` 으로 되돌렸다. `1920s–1930s` → **`anni 1920-1930`**(`anni Venti e Trenta` 금지).
+⚠ 세기 로마 숫자(`del XX secolo`)만 예외라는 위 규칙은 그대로 유효하다.
+
 🔴 **다음은 it 이다 — 대상 8슬러그가 de·fr 과 정확히 같다.**
 `seoul-suwon-hwaseong-{gwangmyeong-cave,folk-village,waujeongsa}-starfield*` ·
 `seoul-seoraksan-{nami-island-morning-calm,naksansa-temple-naksan-beach}*` ·
@@ -637,8 +658,13 @@ ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만
 |---|---|---|---|---|
 | **de** | **21/21** | **0** | — | — (+ 구행 7건은 사장님 결정 대기) |
 | **fr** | **21/21** | **0** | — | — |
-| **it** | **18/21** | 3 | 36 | ≈122,000 (5슬러그 발행 완료) |
+| **it** | **21/21** | **0** | — | — |
 | **ru** | 13/21 | 8 | 82 | 270,610 (은퇴 `jeju-cruise-shore-excursion-bus-tour` 14u/48,131자 제외) |
+
+🔴 **남은 것은 ru 8슬러그뿐이다 — 대상은 de·fr·it 와 정확히 같은 8개이고 입력은 이미 `in/` 에 있다.**
+순서는 위 「상품군순」 권고 그대로: 전세 2종 → 수원 3종 → 설악 2종 → 부산 크루즈(마지막).
+🔴 **ru 는 G10(키릴 비율) 게이트가 추가로 붙는 유일한 로케일**이고, `charset-scan.mjs` 에서
+키릴이 **허용 문자**인 것도 ru 뿐이다. 라틴 문자가 본문에 새면 그건 fr·de·it 와 반대 방향의 사고다.
 
 슬러그별(fr 실측 · it/ru 도 ±1% 안):
 `busan-private-car-charter-city-tour` 8u/22,166 → `seoul-suburbs-private-chartered-car-10hr` 8u/24,743 →
