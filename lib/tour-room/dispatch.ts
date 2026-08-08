@@ -22,6 +22,11 @@ import {
   signCustomerRoomToken,
   signGuideRoomToken,
 } from '@/lib/tour-room/token';
+import {
+  ensureBookingReference,
+  generateInviteShortCode,
+  shortLinkUrl,
+} from '@/lib/tour-room/entryCode';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { isPrivateTour } from '@/lib/tour-room/tourKind';
 import type { RoomDbClient } from '@/lib/tour-room/access';
@@ -210,24 +215,30 @@ export async function dispatchRoomInvites(
       displayName: booking.contact_name || 'Guest',
       tourDate: booking.tour_date,
     });
+    // entry-code plan §C-2: 메일에 실리는 것은 345자 토큰 URL 이 아니라 짧은
+    // 별칭(/r/{code})이다. 별칭은 이 원장 행에 붙어 살므로, 재발송의
+    // 폐기-후-재발급(위 revokeScope)이 그대로 "옛 짧은 링크의 죽음"이 된다.
+    // 클릭 시 토큰 발급은 /api/tour-mode/entry 가 한다.
+    const shortCode = generateInviteShortCode();
     await recordInvite(supabase, {
       booking_id: booking.id,
       role: 'customer',
       token_hash: hashToken(token),
+      short_code: shortCode,
       display_name: booking.contact_name || 'Guest',
       sent_to: booking.contact_email,
       sent_via: 'email',
       expires_at: new Date(payload.exp * 1000).toISOString(),
       created_by: options?.createdBy ?? null,
     });
+    // 상설 코드(A2C-…)는 메일 본문에 병기 — 링크를 잃어도 /room 에서 입장한다.
+    const entryCode = await ensureBookingReference(supabase, booking.id);
     const locale = normalizeRoomLocale(booking.preferred_language) as InviteLocale;
-    const roomUrl = `${base}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(token)}`;
+    const roomUrl = shortLinkUrl(base, shortCode);
     // D2: only private (vehicle-charter) tours get the plan pre-selection CTA;
     // join tours run a fixed itinerary, so we pass no planUrl and the template
     // omits the CTA block entirely.
-    const planUrl = tourIsPrivate
-      ? `${base}/tour-mode/plan/${booking.id}?rt=${encodeURIComponent(token)}`
-      : undefined;
+    const planUrl = tourIsPrivate ? shortLinkUrl(base, shortCode, 'plan') : undefined;
     const mail = buildCustomerRoomInviteHtml({
       locale,
       customerName: booking.contact_name || 'Traveller',
@@ -238,6 +249,7 @@ export async function dispatchRoomInvites(
       pickupTime,
       roomUrl,
       planUrl,
+      entryCode,
     });
     const sent = await sendEmail({ to: booking.contact_email, subject: mail.subject, html: mail.html });
     customer.sent = sent.success;
@@ -272,11 +284,13 @@ export async function dispatchRoomInvites(
         tourDate: booking.tour_date,
         displayName: 'Guide',
       });
+      const guideShortCode = generateInviteShortCode();
       await recordInvite(supabase, {
         tour_id: booking.tour_id,
         tour_date: booking.tour_date,
         role: 'guide',
         token_hash: hashToken(token),
+        short_code: guideShortCode,
         display_name: 'Guide',
         sent_to: guideEmail,
         sent_via: 'email',
@@ -287,7 +301,8 @@ export async function dispatchRoomInvites(
       // drive mode) lives at /tour-mode/guide; the tour-date token opens the
       // whole day there. This is the ONE operator link — a separate hired driver
       // gets a distinct PIN link only when needed (ops dashboard).
-      const guideUrl = `${base}/tour-mode/guide?rt=${encodeURIComponent(token)}`;
+      // 짧은 별칭으로 보낸다 — QR 밀도도 낮아져 현장 스캔이 쉬워진다.
+      const guideUrl = shortLinkUrl(base, guideShortCode);
       let roomCount = 1;
       try {
         const { data: siblings } = await supabase

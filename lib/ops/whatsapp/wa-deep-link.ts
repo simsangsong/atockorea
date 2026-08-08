@@ -103,6 +103,8 @@ export const WA_TEMPLATE_VARIABLES: { token: string; label: string }[] = [
   { token: '{pickup_time}', label: '픽업 시간' },
   { token: '{room_link}', label: '투어룸 링크' },
   { token: '{pass_link}', label: '패스 링크' },
+  // entry-code plan §C-2 — 예약 상설 코드(A2C-…). atockorea.com/room 에서 입장.
+  { token: '{entry_code}', label: '입장 코드 (자동)' },
   { token: '{operator}', label: '여행사명' },
   // M1 — 예보에서 자동으로 채워진다. 예보가 없으면 그 줄은 통째로 빠진다
   // (`stripEmptyTokenLines`) — 빈 라벨이 남은 메시지를 보내지 않기 위해서다.

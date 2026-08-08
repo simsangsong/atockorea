@@ -58,6 +58,8 @@ export const SMART_APP_ROLES: readonly K4Actor[] = ['guest', 'guide', 'driver'] 
 export const FEATURE_STAGES: Record<string, JourneyStage> = {
   // ── booked: the door, the room, and who else is coming ─────────────────────
   'POST /api/tour-rooms/[bookingId]/join': 'booked',
+  /** 입장 코드 문(entry-code plan §C-2) — 예약 직후부터 쓰는 코드→열쇠 교환. */
+  'POST /api/tour-mode/entry': 'booked',
   'GET /api/tour-rooms/[bookingId]/companion-invite': 'booked',
   'POST /api/tour-rooms/[bookingId]/companion-invite': 'booked',
   'POST /api/tour-rooms/[bookingId]/companion-invite/redeem': 'booked',

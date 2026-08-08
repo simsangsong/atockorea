@@ -27,9 +27,27 @@ interface TourModeBooking {
   tours: { title?: string | null; city?: string | null; image_url?: string | null } | null;
 }
 
+/** 코드 판정 성공 응답 (POST /api/tour-mode/entry). */
+interface EntryCodeResult {
+  kind: 'customer' | 'guide' | 'driver';
+  url: string;
+  tourTitle: string | null;
+  tourDate: string | null;
+  guestName: string | null;
+}
+
 export const GUEST_CREDS_STORAGE_PREFIX = 'tour_mode_guest_creds:';
 
-export default function TourModeEntry({ initialLocale = 'en' }: { initialLocale?: RoomLocale }) {
+export default function TourModeEntry({
+  initialLocale = 'en',
+  initialCode = null,
+  initialTo = null,
+}: {
+  initialLocale?: RoomLocale;
+  /** /r/{code}·/room?code= 리다이렉트가 실어 온 입장 코드 — 있으면 자동 입장. */
+  initialCode?: string | null;
+  initialTo?: 'plan' | null;
+}) {
   const router = useRouter();
   // 🔴 N6 — this was `detectEntryLocale()` during render. The server said 'en'
   // and the browser's hydration pass said the device locale, so every guest who
@@ -43,11 +61,13 @@ export default function TourModeEntry({ initialLocale = 'en' }: { initialLocale?
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
   /** Distinct from `signedIn === false`: we could not ask, so we do not know. */
   const [loadFailed, setLoadFailed] = useState(false);
-  const [guestBookingId, setGuestBookingId] = useState('');
-  const [guestEmail, setGuestEmail] = useState('');
-  const [guestName, setGuestName] = useState('');
-  const [guestError, setGuestError] = useState<string | null>(null);
-  const [guestBusy, setGuestBusy] = useState(false);
+  // 코드 문(entry-code plan §C-2) — 예전 "예약 ID(UUID)+이메일" 폼의 후임.
+  const [codeInput, setCodeInput] = useState('');
+  const [codeBusy, setCodeBusy] = useState(false);
+  const [codeError, setCodeError] = useState<string | null>(null);
+  const [codeResult, setCodeResult] = useState<EntryCodeResult | null>(null);
+  /** 링크로 들어온 자동 입장이 진행되는 동안엔 전체 화면을 "여는 중"으로 덮는다. */
+  const [autoOpening, setAutoOpening] = useState(Boolean(initialCode));
 
   // W5.1 — the installed PWA's start_url is /tour-mode; jump straight back
   // into the last room (its stored room session makes rejoin seamless, and
@@ -105,28 +125,77 @@ export default function TourModeEntry({ initialLocale = 'en' }: { initialLocale?
     };
   }, []);
 
-  const openGuestRoom = async () => {
-    const bookingId = guestBookingId.trim();
-    const email = guestEmail.trim();
-    if (!bookingId || !email) return;
-    setGuestBusy(true);
-    setGuestError(null);
+  /**
+   * 코드 → 방 열쇠 교환. 수동 입력은 확인 카드를 한 번 보여주고(오타 방어),
+   * 링크(/r/{code})로 들어온 자동 흐름은 성공 즉시 방으로 간다 — 링크의 코드는
+   * 우리가 조립한 것이라 확인 카드가 마찰만 더한다.
+   */
+  const resolveCode = async (raw: string, opts?: { auto?: boolean }) => {
+    const code = raw.trim();
+    if (!code) return;
+    setCodeBusy(true);
+    setCodeError(null);
+    setCodeResult(null);
     try {
-      sessionStorage.setItem(
-        `${GUEST_CREDS_STORAGE_PREFIX}${bookingId}`,
-        JSON.stringify({ contactEmail: email, contactName: guestName.trim() || undefined }),
-      );
+      const res = await fetch('/api/tour-mode/entry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code, ...(initialTo === 'plan' ? { to: 'plan' } : {}) }),
+      });
+      const json = (await res.json().catch(() => ({}))) as Partial<EntryCodeResult> & { error?: string };
+      if (res.ok && typeof json.url === 'string') {
+        const result: EntryCodeResult = {
+          kind: json.kind === 'guide' || json.kind === 'driver' ? json.kind : 'customer',
+          url: json.url,
+          tourTitle: json.tourTitle ?? null,
+          tourDate: json.tourDate ?? null,
+          guestName: json.guestName ?? null,
+        };
+        if (opts?.auto) {
+          router.replace(result.url);
+          return; // busy 유지 — 전환 중 폼이 다시 번쩍이지 않게
+        }
+        setCodeResult(result);
+        return;
+      }
+      if (res.status === 429) setCodeError(copy.errorRateLimited);
+      else if (json.error === 'expired') setCodeError(copy.errorCodeExpired);
+      else if (json.error === 'revoked') setCodeError(copy.errorCodeRevoked);
+      else if (res.status === 404) setCodeError(copy.errorNotFound);
+      else setCodeError(copy.errorGeneric);
     } catch {
-      /* the room page will fall back to asking again */
+      setCodeError(copy.errorGeneric);
+    } finally {
+      setCodeBusy(false);
+      if (opts?.auto) setAutoOpening(false);
     }
-    router.push(`/tour-mode/room/${encodeURIComponent(bookingId)}`);
-    setGuestBusy(false);
   };
+
+  // /r/{code}·/room?code= — 링크가 실어 온 코드는 손대지 않고 그대로 교환한다.
+  useEffect(() => {
+    if (!initialCode) return;
+    setCodeInput(initialCode);
+    void resolveCode(initialCode, { auto: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialCode]);
 
   // U6.4 — entry list on the room token system (light theme; the room itself
   // resolves dark mode after join).
   const inputClass =
     'tr-body mt-1 w-full rounded-[var(--tr-radius-input)] bg-[var(--tr-surface)] px-4 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:outline-none focus:ring-2 focus:ring-[var(--tr-accent)]';
+
+  // /r/{code} 자동 입장 중 — 목록·폼 대신 "여는 중" 한 장. 실패하면 아래 폼으로
+  // 떨어지고 코드가 미리 채워져 있다.
+  if (autoOpening) {
+    return (
+      <div className="tr-atmos tr-safe-top tr-safe-bottom tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)]">
+        <div className="px-6 text-center" data-testid="entry-auto-opening">
+          <p className="tr-title text-[var(--tr-ink)]">{copy.codeOpening}</p>
+          <p className="tr-label mt-2 font-mono tracking-wide text-[var(--tr-ink-3)]">{codeInput}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="tr-atmos tr-safe-top tr-safe-bottom tr-root min-h-dvh bg-[var(--tr-canvas)]">
@@ -199,42 +268,56 @@ export default function TourModeEntry({ initialLocale = 'en' }: { initialLocale?
             className="mt-3 space-y-3"
             onSubmit={(event) => {
               event.preventDefault();
-              void openGuestRoom();
+              void resolveCode(codeInput);
             }}
           >
             <label className="block">
-              <span className="tr-label font-medium text-[var(--tr-ink-2)]">{copy.bookingIdLabel}</span>
+              <span className="tr-label font-medium text-[var(--tr-ink-2)]">{copy.codeLabel}</span>
               <input
-                value={guestBookingId}
-                onChange={(e) => setGuestBookingId(e.target.value)}
+                value={codeInput}
+                onChange={(e) => {
+                  setCodeInput(e.target.value);
+                  setCodeResult(null);
+                  setCodeError(null);
+                }}
                 required
                 autoComplete="off"
-                className={inputClass}
+                autoCapitalize="characters"
+                spellCheck={false}
+                data-testid="entry-code-input"
+                className={`${inputClass} font-mono tracking-wide uppercase`}
               />
             </label>
-            <label className="block">
-              <span className="tr-label font-medium text-[var(--tr-ink-2)]">{copy.emailLabel}</span>
-              <input
-                type="email"
-                value={guestEmail}
-                onChange={(e) => setGuestEmail(e.target.value)}
-                required
-                autoComplete="email"
-                className={inputClass}
-              />
-            </label>
-            <label className="block">
-              <span className="tr-label font-medium text-[var(--tr-ink-2)]">{copy.nameLabel}</span>
-              <input value={guestName} onChange={(e) => setGuestName(e.target.value)} autoComplete="name" className={inputClass} />
-            </label>
-            {guestError && <p className="tr-label text-[var(--tr-danger)]">{guestError}</p>}
-            <button
-              type="submit"
-              disabled={guestBusy || !guestBookingId.trim() || !guestEmail.trim()}
-              className="tr-body flex min-h-[48px] w-full items-center justify-center rounded-full bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)] transition disabled:opacity-40"
-            >
-              {guestBusy ? copy.loading : copy.enterRoom}
-            </button>
+            {codeError && (
+              <p className="tr-label text-[var(--tr-danger)]" data-testid="entry-code-error">
+                {codeError}
+              </p>
+            )}
+            {codeResult ? (
+              <div className="tr-card p-4" data-testid="entry-code-confirm">
+                <p className="tr-card-text font-medium text-[var(--tr-ink)]">
+                  {codeResult.tourTitle ?? copy.title}
+                </p>
+                <p className="tr-label mt-0.5 text-[var(--tr-ink-2)]">
+                  {[codeResult.tourDate, codeResult.guestName].filter(Boolean).join(' · ')}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => router.push(codeResult.url)}
+                  className="tr-body mt-3 flex min-h-[48px] w-full items-center justify-center rounded-full bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)] transition"
+                >
+                  {copy.enterRoom}
+                </button>
+              </div>
+            ) : (
+              <button
+                type="submit"
+                disabled={codeBusy || !codeInput.trim()}
+                className="tr-body flex min-h-[48px] w-full items-center justify-center rounded-full bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)] transition disabled:opacity-40"
+              >
+                {codeBusy ? copy.loading : copy.codeContinue}
+              </button>
+            )}
           </form>
         </section>
       </div>

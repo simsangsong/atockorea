@@ -31,6 +31,8 @@ export interface InviteEmailVars {
    * `/extend`'s own gate, so the promise and the billing cannot drift.
    */
   priceType?: string | null;
+  /** entry-code plan §C-2 — 예약 상설 코드(A2C-…). 있으면 코드 입장 줄을 병기. */
+  entryCode?: string | null;
 }
 
 export interface InviteEmailContent {
@@ -39,7 +41,16 @@ export interface InviteEmailContent {
   text: string;
 }
 
-type CopyKey = 'subject' | 'greeting' | 'intro' | 'what' | 'cta' | 'fallback' | 'closing' | 'signoff';
+type CopyKey =
+  | 'subject'
+  | 'greeting'
+  | 'intro'
+  | 'what'
+  | 'cta'
+  | 'fallback'
+  | 'codeLine'
+  | 'closing'
+  | 'signoff';
 
 /**
  * 사전 번역 캡슐.
@@ -125,6 +136,19 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     ru: 'Если кнопка не работает, откройте эту ссылку:',
     it: 'Se il pulsante non funziona, apri questo link:',
   },
+  // entry-code plan §C-2 문 2 — 링크가 죽거나 메일이 묻혀도 코드는 산다.
+  codeLine: {
+    en: 'No link handy? Go to atockorea.com/room and enter code {entry_code}.',
+    ko: '링크가 없을 땐 atockorea.com/room 에서 코드 {entry_code} 를 입력하세요.',
+    zh: '没有链接时，请访问 atockorea.com/room 并输入代码 {entry_code}。',
+    'zh-TW': '沒有連結時，請前往 atockorea.com/room 並輸入代碼 {entry_code}。',
+    ja: 'リンクが使えないときは atockorea.com/room でコード {entry_code} を入力してください。',
+    es: '¿Sin el enlace a mano? Entre en atockorea.com/room e introduzca el código {entry_code}.',
+    fr: 'Pas de lien sous la main? Rendez-vous sur atockorea.com/room et saisissez le code {entry_code}.',
+    de: 'Kein Link zur Hand? Öffnen Sie atockorea.com/room und geben Sie den Code {entry_code} ein.',
+    ru: 'Нет ссылки под рукой? Откройте atockorea.com/room и введите код {entry_code}.',
+    it: 'Non hai il link? Vai su atockorea.com/room e inserisci il codice {entry_code}.',
+  },
   closing: {
     en: 'See you on the tour!',
     ko: '투어에서 만나요!',
@@ -200,6 +224,7 @@ export function buildInviteEmail(rawLocale: string | null | undefined, vars: Inv
     tourName: vars.tourTitle,
     tourDate: vars.tourDate,
     roomLink: vars.inviteUrl,
+    entryCode: vars.entryCode ?? null,
   };
 
   const subject = line('subject', locale, interp);
@@ -208,6 +233,7 @@ export function buildInviteEmail(rawLocale: string | null | undefined, vars: Inv
   const what = line('what', locale, interp);
   const cta = line('cta', locale, interp);
   const fallback = line('fallback', locale, interp);
+  const codeLine = vars.entryCode ? line('codeLine', locale, interp) : '';
   const closing = line('closing', locale, interp);
   const signoff = line('signoff', locale, interp);
 
@@ -234,6 +260,11 @@ export function buildInviteEmail(rawLocale: string | null | undefined, vars: Inv
       <p style="margin:0 0 6px;font-size:12px;line-height:18px;color:#6b7280;">${escapeHtml(fallback)}</p>
       <p style="margin:0 0 20px;font-size:12px;line-height:18px;word-break:break-all;"><a href="${safeUrl}" style="color:#2563eb;text-decoration:underline;">${safeUrl}</a></p>
 ${
+        codeLine
+          ? `      <p style="margin:0 0 18px;padding:10px 13px;background:#f9fafb;border:1px dashed #d1d5db;border-radius:9px;font-size:12px;line-height:19px;color:#4b5563;text-align:center;">${escapeHtml(codeLine)}</p>
+`
+          : ''
+      }${
         cashNotice
           ? `      <p style="margin:0 0 18px;padding:11px 13px;background:#faf7f0;border:1px solid #e7e0d4;border-radius:9px;font-size:12px;line-height:19px;color:#4b5563;">${escapeHtml(cashNotice)}</p>
 `
@@ -253,6 +284,7 @@ ${
     what,
     '',
     `${cta}: ${url}`,
+    ...(codeLine ? ['', codeLine] : []),
     // The plain-text part is not a courtesy copy — some clients render only
     // this, and a promise that exists in one half of a multipart mail is a
     // promise that some guests never received.

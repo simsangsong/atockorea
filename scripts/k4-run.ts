@@ -274,6 +274,17 @@ async function ensureMessage(room: RoomState): Promise<void> {
 }
 
 const SPECS: Record<string, Spec> = {
+  // ── the door (entry code) ─────────────────────────────────────────────────
+  // 코드가 곧 자격인 무크레덴셜 문. 시뮬 예약에는 booking_reference 가 없어
+  // 여기서는 "모르는 코드에 균일한 404, 게이트 발동 시 429"를 잰다 — 해피패스
+  // (코드→토큰→입장)는 __tests__/api/tourModeEntry.test.ts 와 실렌더 QA 가 증명.
+  'POST /api/tour-mode/entry': {
+    path: () => '/api/tour-mode/entry',
+    headers: () => ({}),
+    body: () => ({ code: 'A2C-00000000' }),
+    ok: [404, 429],
+  },
+
   // ── chat core ─────────────────────────────────────────────────────────────
   'GET /api/tour-rooms/[bookingId]/messages': {
     path: (c) => `/api/tour-rooms/${c.room.bookingId}/messages`,

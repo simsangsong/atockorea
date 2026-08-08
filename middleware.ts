@@ -295,6 +295,13 @@ function routeRequest(request: NextRequest): NextResponse {
     return NextResponse.next();
   }
 
+  // 입장 코드의 두 문도 같은 이유로 로케일 중립이다 (entry-code plan §C-2):
+  // /r/{code} 는 이메일·왓츠앱에 실리는 짧은 링크, /room 은 안내문에 인쇄되는
+  // 고정 주소. 로케일 접두사가 붙는 순간 인쇄된 주소가 404 가 된다.
+  if (pathname === '/room' || pathname === '/r' || pathname.startsWith('/r/')) {
+    return NextResponse.next();
+  }
+
   // 가이드 셀프 스케줄 링크(§11.F `/g/schedule/[token]`)도 같은 이유로 로케일
   // 중립이다. 스태프 전용 한국어 단일 로케일 화면이라 `/ko/g/...` 같은 접두사가
   // 붙으면 존재하지 않는 경로가 된다 — 그런데 이 링크를 받는 사람은 대부분

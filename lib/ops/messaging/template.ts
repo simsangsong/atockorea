@@ -21,10 +21,16 @@ export interface MessageVars {
   pickupPoint?: string | null;
   /** HH:MM */
   pickupTime?: string | null;
-  /** 투어룸 링크 — B0.3 이후 **그 손님의 개인 링크**다. */
+  /** 투어룸 링크 — B0.3 이후 **그 손님의 개인 링크**다(entry-code 이후 짧은 별칭). */
   roomLink?: string | null;
   /** 당일 패스/체크인 링크. */
   passLink?: string | null;
+  /**
+   * entry-code plan §C-2 — 예약 상설 코드(A2C-…). 링크 없이 atockorea.com/room
+   * 에서 입장하는 길을 문구에 병기할 때 쓴다. 사장님이 상품 유형별 표준 문구를
+   * 주면 그 문구가 이 토큰을 쓴다(결정 2026-08-08 ③).
+   */
+  entryCode?: string | null;
   operatorName?: string | null;
   /**
    * M1 — 다음날 예보 한 줄('맑음 12–19°C'). 예보를 못 가져왔으면 **넣지 않는다**:
@@ -64,6 +70,7 @@ export const TEMPLATE_TOKENS = {
   '{room_link}': (v: MessageVars) => v.roomLink ?? '',
   '{pass_link}': (v: MessageVars) => v.passLink ?? '',
   '{pass_url}': (v: MessageVars) => v.passLink ?? '',
+  '{entry_code}': (v: MessageVars) => v.entryCode ?? '',
   '{operator}': (v: MessageVars) => v.operatorName ?? 'AtoC Korea',
   '{weather}': (v: MessageVars) => v.weather ?? '',
   '{clothing}': (v: MessageVars) => v.clothing ?? '',

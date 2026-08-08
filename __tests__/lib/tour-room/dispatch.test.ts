@@ -13,7 +13,6 @@ import {
 } from '@/lib/tour-room/dispatch';
 import { POST as dispatchPOST } from '@/app/api/admin/orders/[id]/dispatch-room/route';
 import { sendEmail } from '@/lib/email';
-import { verifyRoomToken } from '@/lib/tour-room/token';
 import { requireAdmin } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
 
@@ -125,12 +124,14 @@ describe('dispatchRoomInvites (T5.1)', () => {
     expect(db.revocations.length).toBeGreaterThanOrEqual(2);
 
     // Customer mail: localized (ja) with a working room link.
+    // entry-code plan §C-2: 메일에 실리는 것은 345자 토큰 URL 이 아니라 짧은
+    // 별칭(/r/{code})이고, 별칭은 같은 원장 행(short_code)에 붙어 산다.
     const customerCall = sendEmailMock.mock.calls.find((c) => c[0].to === 'alex@example.com')![0];
     expect(customerCall.subject).toContain('ツアールーム');
     const url = /href="([^"]+)"/.exec(customerCall.html)![1];
-    expect(url).toContain('/tour-mode/room/booking-1?rt=');
-    const token = decodeURIComponent(new URL(url).searchParams.get('rt')!);
-    expect(verifyRoomToken(token)).toMatchObject({ scope: 'booking', bookingId: 'booking-1' });
+    expect(url).toMatch(/\/r\/[A-Z2-9]{10}$/);
+    expect(String(customerInvite.short_code)).toBe(url.split('/r/')[1]);
+    expect(customerCall.html).not.toContain('?rt=');
 
     // Guide mail carries a hosted QR image, never a data: URI.
     const guideCall = sendEmailMock.mock.calls.find((c) => c[0].to === 'guide@merchant.test')![0];
@@ -142,16 +143,17 @@ describe('dispatchRoomInvites (T5.1)', () => {
     const db = fakeDb({ invites: [], revocations: [], roomUpdates: [], tourPriceType: 'vehicle' });
     await dispatchRoomInvites(db, BOOKING, { createdBy: 'admin-1' });
     const customerCall = sendEmailMock.mock.calls.find((c) => c[0].to === 'alex@example.com')![0];
-    expect(customerCall.html).toContain('/tour-mode/plan/booking-1?rt=');
+    // entry-code 이후 /plan CTA 는 같은 별칭의 ?to=plan 착지다.
+    expect(customerCall.html).toMatch(/\/r\/[A-Z2-9]{10}\?to=plan/);
   });
 
   it('D2: join (person/group) tour omits the /plan CTA from the customer mail', async () => {
     const db = fakeDb({ invites: [], revocations: [], roomUpdates: [], tourPriceType: 'person' });
     await dispatchRoomInvites(db, BOOKING, { createdBy: 'admin-1' });
     const customerCall = sendEmailMock.mock.calls.find((c) => c[0].to === 'alex@example.com')![0];
-    expect(customerCall.html).not.toContain('/tour-mode/plan/');
+    expect(customerCall.html).not.toContain('?to=plan');
     // The room link itself is unchanged — only the plan CTA is gated.
-    expect(customerCall.html).toContain('/tour-mode/room/booking-1?rt=');
+    expect(customerCall.html).toMatch(/\/r\/[A-Z2-9]{10}/);
   });
 
   it('reports (not throws) a missing contact email', async () => {

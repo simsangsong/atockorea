@@ -73,7 +73,10 @@ describe('OpsRoomManager (Ops Freedom)', () => {
     expect(await screen.findByText(/Jeju Grand/)).toBeInTheDocument();
   });
 
-  it('per-booking controls include the 기사(driver) link + channel badge', async () => {
+  it('운영자·기사 링크는 그룹 헤더에 1개씩 — 예약 행에는 손님 링크만 (entry-code §C-4)', async () => {
+    // 예약 행마다 [별도 기사] 버튼이 있던 시절, "기사도 손님별로 매칭해 복사해야
+    // 하나"는 오해가 실제로 나왔다(사장님 2026-08-08). 링크의 실제 스코프는
+    // (투어,날짜)라 하루 1개다 — 버튼 위치가 그 사실을 말해야 한다.
     mockFetch([
       {
         id: 'b1',
@@ -90,13 +93,34 @@ describe('OpsRoomManager (Ops Freedom)', () => {
         room: null,
         invite: { customer_active: false, customer_last: null, guide_active: false, guide_last: null },
       },
+      {
+        id: 'b2',
+        tour_id: 't1',
+        tour_time: '08:00:00',
+        contact_name: 'Marco',
+        contact_email: null,
+        contact_phone: null,
+        number_of_guests: 2,
+        preferred_language: 'it',
+        status: 'confirmed',
+        source: 'gyg',
+        tour: { id: 't1', title: 'Jeju Grand' },
+        room: null,
+        invite: { customer_active: false, customer_last: null, guide_active: false, guide_last: null },
+      },
     ]);
     await act(async () => {
       render(<OpsRoomManager date="2026-09-12" onClose={noop} onOpenRoom={noop} onRoomsChanged={noop} />);
     });
-    expect(screen.getByText('별도 기사 (PIN)')).toBeInTheDocument();
-    expect(screen.getByText('운영자 링크 (가이드·운전)')).toBeInTheDocument();
-    expect(screen.getByText('GYG')).toBeInTheDocument();
-    expect(screen.getByText('룸 만들기 + 링크')).toBeInTheDocument();
+    // 그룹(투어) 레벨에 각 1개 — 예약이 2건이어도 버튼은 1쌍이다.
+    expect(screen.getAllByText('운영자 링크')).toHaveLength(1);
+    expect(screen.getAllByText('기사 (PIN)')).toHaveLength(1);
+    // 예약 행에는 더 이상 없다(옛 라벨이 되살아나면 오해도 되살아난다).
+    expect(screen.queryByText('별도 기사 (PIN)')).toBeNull();
+    expect(screen.queryByText('운영자 링크 (가이드·운전)')).toBeNull();
+    // 예약 행의 손님 링크·채널 뱃지는 그대로 예약 단위다.
+    expect(screen.getAllByText('손님 링크')).toHaveLength(2);
+    expect(screen.getAllByText('GYG')).toHaveLength(2);
+    expect(screen.getAllByText('룸 만들기 + 링크')).toHaveLength(2);
   });
 });
