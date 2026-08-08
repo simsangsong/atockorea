@@ -121,6 +121,19 @@ DNS 존을 먼저 무변경 이관(회색 구름)한 뒤, 트래픽 전환은 **
 | D5 | 스테이징에서 **LINE 로그인 테스트 여부** — 하려면 LINE 콘솔에 스테이징 콜백 URL 등록 필요. 안 하면 프로덕션 전환 직후 확인으로 갈음 | 갈음(전환 후 확인) |
 | D6 | **Images 변환 과금 승인** — 무료 5천/월 초과분 $0.5/1천. 현 카탈로그 규모 추정 월 $3~8 ⚠ | 승인 |
 
+### C-1 사장님 수동 준비 체크리스트 (0→9, 2026-08-08 안내 — 이후는 전부 Claude 가 대행)
+
+0. **준비물:** `simsangsong@gmail.com` 접근 · 결제 카드 · GitHub(simsangsong) 로그인 · Namecheap 로그인 · 비밀번호 관리자
+1. **CF 계정 생성** — dash.cloudflare.com/sign-up, 🔴 **반드시 사장님 본인 메일**(Vercel 계정 분산 사고 재발 방지 — 이 계정이 인프라 소유주). 새 강한 비밀번호 + 메일 인증
+2. **2FA** — My Profile → Authentication → 2FA ON, 복구코드는 비밀번호 관리자에
+3. **Workers Paid $5/월 구독 + 카드** — Workers & Pages → Plans (무료는 3MB·CPU 10ms 라 우리 앱 불가)
+4. **Add a site** — `atockorea.com` 입력 → **Free plan** → 마지막에 나오는 **네임서버 2개 스크린샷** → 창 닫기. 🔴 Namecheap NS 변경은 절대 아직 아님
+5. **API 토큰** — My Profile → API Tokens → Create → Custom token `claude-migration`. 권한: Account [Workers Scripts·Workers R2 Storage·D1·Cloudflare Images·Workers Builds Configuration = Edit / Workers Tail·Account Settings = Read] + Zone [Zone·DNS·Zone Settings·Dynamic Redirect·Cache Rules·Firewall Services = Edit], Zone Resources = All zones from account (목록에 없는 이름은 건너뛰고 보고). 생성 직후 1회만 표시 → **채팅 금지, `.env.local` 맨 아래 `CLOUDFLARE_API_TOKEN=...` 한 줄로 저장**
+6. **GitHub 앱 설치** — Workers & Pages → Create → Import a repository → Connect GitHub → Only select repositories → `atockorea` → Install (워커 생성은 안 해도 됨)
+7. **Vercel(확인만, 변경·삭제 절대 금지):** Billing 스크린샷 1장(§K 확정) + env 목록 첫 화면 위쪽 잘렸으면 1장 추가. env·도메인·프로젝트 그대로(롤백 보험) · `vercel env pull` 금지
+8. **Namecheap(확인만):** ① 만료일(1년 미만이면 갱신 권장) ② Advanced DNS 전체 스크린샷(이관 대조 정본) ③ DNSSEC ON/OFF 상태 ④ Redirect Email 설정 유무. 🔴 Custom DNS 전환은 CF4 에서 "지금" 신호 후에만
+9. **전달:** 토큰(파일로)·스크린샷들·DNSSEC/만료일·운영 메일 3개 값(OPS_ALERT_EMAIL·ADMIN_BOOKING_NOTIFICATION_EMAILS·OPS_INBOUND_ADDRESSES). 이후 CF1~CF7 은 사장님 손 없이 진행(NS 전환 클릭·컷오버 승인 2번만 남음)
+
 ---
 
 ## §D 페이즈 플랜 (나노 체크리스트)
