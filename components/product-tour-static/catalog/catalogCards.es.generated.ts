@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Recogida en el puerto",
         "Regreso garantizado"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 9 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande."
     },
@@ -120,8 +120,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Totalmente personalizable",
         "Recogida en tu hotel de Busan"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Un coche privado y un chófer-guía autorizado solo para tu grupo, por todo Busan. Empieza por una de las tres rutas recomendadas — el día clásico de imprescindibles, la costa del templo marino y la Sky Capsule, o el circuito del casco antiguo y Songdo — y luego mueve, quita o añade paradas hasta que el día sea tuyo. Recogida en el alojamiento incluida, de 5 a 9 horas, un precio por vehículo para hasta 7 personas."
     },
@@ -144,8 +144,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Ruta Personalizable",
         "Recogida en Crucero Incluida"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
     },
@@ -169,8 +169,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Recogida en el puerto",
         "Ventana de 8 horas"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Excursión de crucero en Busan en grupo reducido, en furgoneta limitada a 12 pasajeros. Nueve paradas en una jornada de ocho horas: Haedong Yonggungsa, el Cementerio Conmemorativo de la ONU, almuerzo por tu cuenta y después Jagalchi, la plaza BIFF y el mercado Gukje a pie, la Aldea Cultural de Gamcheon, la pasarela Songdo Cloud Trails —con el teleférico hasta el Sky Park como elección in situ— y el parque Yongdusan. La recogida es en la terminal de cruceros en la que atraque tu barco y la vuelta se ajusta a tu all-aboard."
     },
@@ -195,8 +195,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Costa",
         "Aldeas culturales"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una jornada de Busán en grupo pequeño construida sobre la costa y las aldeas de ladera: el templo marino Haedong Yonggungsa en su tranquila ventana matinal, el mirador Daritdol de suelo de cristal (gratuito) en Cheongsapo, el trayecto en Sky Capsule del Blueline Park de Cheongsapo a Mipo (billete incluido o excluido — se elige al reservar), almuerzo, la Aldea Cultural de Gamcheon y la poco conocida aldea de murales Dakbatgol, donde un monorraíl gratuito sube por la 'escalera de los deseos'. Todos los anclajes salvo la cápsula opcional son de entrada gratuita."
     },
@@ -245,8 +245,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Clásico de Busan",
         "Todo el año"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Tour de un día en grupo pequeño con 7 paradas que recorre el circuito clásico de Busan: el templo costero de Haedong Yonggungsa, Cheongsapo y el Parque Blue Line (Sky Capsule opcional), almuerzo local en Busan, Cementerio Memorial de la ONU, las laderas pintadas del Pueblo Cultural de Gamcheon y el Mercado de Pescado Jagalchi. Tres puntos de recogida en el centro de Busan; guía certificado de habla inglesa; minibús (≈12 personas máx.). La entrada a todos los sitios es gratuita; solo el almuerzo y las entradas opcionales se pagan el día del tour."
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Desde Busan",
         "Paisaje nocturno en invierno"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v2.webp",
       "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
       "shortCardDescription": "Tour de un día a Gyeongju en grupo pequeño con salida desde tres salidas de metro de Busan. Por la tarde se deja el vehículo y se camina: de la Casa del Clan Choi al Puente Woljeonggyo, y de Daereungwon a Hwangnidan-gil. El cierre es el Museo Nacional de Gyeongju y, en invierno, Donggung y Wolji de noche."
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Personalizable",
         "Regreso garantizado"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Un alquiler de auto privado de 8 horas diseñado en torno a la hora de embarque de su crucero, no a un horario fijo. Recogida en la pasarela de la Terminal de Cruceros de Incheon, guía-conductor de habla inglesa e itinerario personalizable por el Palacio Gyeongbokgung, el Pueblo Hanok de Bukchon + Insadong, almuerzo a su elección, la Torre N de Seúl y Myeongdong o el Templo Jogyesa. El guía-conductor mantiene un margen de 60 minutos antes del zarpe para que nunca pierda el barco."
     },
@@ -420,8 +420,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Crucero premium",
         "Grupo pequeño"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Un tour en grupo pequeño desde crucero que adapta la ruta según el puerto de llegada. El Puerto de Jeju (norte) sigue una ruta costera este del Patrimonio UNESCO con parada en Seongsan Ilchulbong; el Puerto de Gangjeong (sur) incluye la ruta Hallasan 1100 + geología de la costa sur + Mercado Olle. Ambas rutas regresan a la terminal del crucero con tiempo de margen confortable."
     },
@@ -446,8 +446,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Haenyeo",
         "Entradas incluidas"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas — ahora con la cueva primero: Manjanggul justo tras la apertura (la hora más tranquila del tubo de lava), la Aldea Folclórica de Seongeup, Seongsan Ilchulbong y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela), y un final a última hora de la tarde en la playa Hamdeok Seoubong. Dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007, todas las entradas incluidas, guía certificado en inglés y chino."
     },
@@ -470,8 +470,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "3 sitios UNESCO",
         "Ideal para visitantes de un solo día"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día."
     },
@@ -544,8 +544,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Ruta Personalizable",
         "Recogida en el Hotel Incluida"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Alquiler de auto privado de 9 horas en Jeju con conductor-guía licenciado. Tres rutas recomendadas (Este, Oeste, Sur) recorren los lugares más emblemáticos de la isla, o crea la tuya propia entre monumentos de la UNESCO, escenarios de k-dramas, playas, campos de té y mercados tradicionales. La recogida en el hotel está incluida en cualquier punto de la isla."
     },
@@ -571,8 +571,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Precio accesible",
         "Sin compras"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión de un día en grupo reducido por los principales puntos emblemáticos del sur de Jeju (Seogwipo): la Cascada Jeongbang, la única de Asia que cae directamente al mar, la roca Oedolgae y el paseo costero del Sendero Olle Ruta 7, el Templo Yakcheonsa (el mayor de Asia Oriental), el Museo del Té Osulloc y el Sendero Eoseungsaengak del Hallasan. Cuatro puntos de recogida en toda la Ciudad de Jeju y el aeropuerto, guía certificado en inglés y chino, entrada gratuita en casi todas las paradas salvo la Cascada Jeongbang, sin presión de compras."
     },
@@ -752,8 +752,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Lunes y jueves",
         "Día de 12 horas"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión de 12 horas en autocar desde Seúl hasta la costa del Mar del Este: senderismo en el Parque Nacional Seoraksan, visita al Templo Naksansa en los acantilados y paseo por la Playa de Naksan bordeada de pinos. Sale los lunes y jueves con guía en inglés y traslados de ida y vuelta desde Hongik o Myeongdong."
     },
@@ -777,8 +777,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Todas las entradas incluidas",
         "Día de 13 horas"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Un tour de un día en autobús de 13 horas desde Seúl que recorre las tres paradas más fotografiadas de Corea: el Parque Nacional Seoraksan (la única Reserva de Biosfera de la UNESCO en Corea), la Isla Nami (el Paseo de las Metasecuoyas de Winter Sonata) y el Jardín de la Calma Matutina (el arboreto privado más emblemático de Corea con 5.000 especies de plantas). Todas las entradas incluidas; guía en inglés; recogida en la Estación de la Universidad Hongik o en la Estación de Myeongdong."
     },
@@ -829,8 +829,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Totalmente Personalizable",
         "Recogida Gratuita en Hotel en Seúl"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Un chárter de auto privado premium de 10 horas que te permite diseñar tu propio día por la zona de Seúl. Elige una de las tres rutas recomendadas —Isla Nami + Morning Calm + Petite France + Gangchon Railbike, DMZ + Paju Outlet, o Everland + Pueblo Folclórico Coreano— o envía tu propio itinerario. La recogida gratuita en hotel está incluida para estancias en el centro de Seúl."
     },
@@ -857,8 +857,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Pueblo Folclórico",
         "Excursión de un día"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión cultural de día en grupo reducido desde Seúl hasta la provincia de Gyeonggi, que abarca cuatro facetas contrastantes del patrimonio coreano y la vida moderna: la Fortaleza Suwon Hwaseong (Patrimonio de la Humanidad UNESCO, con murallas y puertas del siglo XVIII), el restaurado Palacio Hwaseong Haenggung con sus recreaciones de la era Joseon, el envolvente Pueblo Folclórico Coreano al aire libre en Yongin, y la espectacular Biblioteca Starfield Suwon de cuatro plantas. 10 horas con transporte y entradas incluidos."
     },
@@ -885,8 +885,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Compras",
         "Excursión de un día"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre tres facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus murallas del siglo XVIII y el Palacio Haenggung; el impresionante parque temático subterráneo iluminado con LED en el interior de la Cueva Gwangmyeong (una antigua mina de oro de la época japonesa); la Biblioteca Starfield de Suwon de cuatro pisos. 9 horas con transporte y entradas incluidos."
     },
@@ -909,8 +909,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Excursión de un día: Patrimonio + Modernidad",
         "Entradas incluidas"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión en grupo reducido desde Seúl que recorre tres facetas contrastantes de Corea: la Fortaleza de Suwon Hwaseong, declarada Patrimonio UNESCO (arquitectura militar del siglo XVIII), la fotogénica Biblioteca Starfield Suwon (icono cultural contemporáneo) y el Templo Waujeongsa en Yongin (gigantesco Buda al aire libre y campana de piedra). Gran valor patrimonial con transporte y entradas incluidos."
     },
@@ -935,8 +935,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Seoraksan",
         "Muro de hielo"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Funciona solo en pleno invierno: el Seoraksan bajo la nieve, las avenidas arboladas escarchadas de la Isla Nami y el muro de hielo de 25 metros que los vecinos de un pueblo de Gapyeong hacen crecer cada enero sobre una pared de roca del valle."
     },
@@ -958,8 +958,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Ideal para visitantes de Jeju por primera vez",
         "Suroeste de Jeju"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Una ruta equilibrada de un día por el suroeste de Jeju que enlaza el humedal de las Tierras Altas 1100 de Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc, la calle de cafeterías de Aewol y el atardecer en Iho Tewoo."
     },

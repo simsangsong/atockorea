@@ -11,6 +11,87 @@ const publicDir = path.join(repo, "public");
 const outputDir = path.join(publicDir, "images", "tours", "catalog-thumbnails");
 const reportDir = path.join(repo, "output", "tour-thumbnail-upgrade-2026-08-08");
 
+const DEFAULT_GRADE = {
+  brightness: 1.015,
+  saturation: 0.95,
+  contrast: 1.025,
+  offset: -2,
+  warmGlow: 0.105,
+  coolShade: 0.07,
+  vignette: 0.15,
+  bottomVeil: 0.075,
+  grain: 3,
+};
+
+const GRADE_OVERRIDES = {
+  "busan-small-group-sightseeing-tour-cruise-passengers": {
+    brightness: 1.075,
+    saturation: 0.88,
+    contrast: 1.03,
+    offset: 0,
+    warmGlow: 0.125,
+    vignette: 0.12,
+  },
+  "from-busan-gyeongju-ancient-capital-day-tour": {
+    brightness: 1.045,
+    saturation: 0.88,
+    contrast: 1.03,
+    offset: -1,
+    warmGlow: 0.12,
+  },
+  "jeju-eastern-unesco-spots-day-tour": {
+    brightness: 1.12,
+    saturation: 0.9,
+    contrast: 1.02,
+    offset: 1,
+    vignette: 0.1,
+  },
+  "seoul-suburbs-private-chartered-car-10hr": {
+    brightness: 1.16,
+    saturation: 0.86,
+    contrast: 1.03,
+    offset: 3,
+    warmGlow: 0.14,
+    vignette: 0.1,
+    bottomVeil: 0.045,
+  },
+  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": {
+    brightness: 1.09,
+    saturation: 0.9,
+    contrast: 1.025,
+    offset: 1,
+    warmGlow: 0.075,
+    coolShade: 0.1,
+    vignette: 0.11,
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    brightness: 0.995,
+    saturation: 0.84,
+    contrast: 1.02,
+    offset: -2,
+    warmGlow: 0.12,
+    coolShade: 0.08,
+    vignette: 0.11,
+  },
+  "busan-private-car-charter-cruise-shore": {
+    brightness: 1,
+    saturation: 0.88,
+    contrast: 1.025,
+    offset: -3,
+    warmGlow: 0.115,
+    vignette: 0.12,
+  },
+  "busan-private-car-charter-city-tour": {
+    brightness: 1.005,
+    saturation: 0.86,
+    contrast: 1.025,
+    offset: -3,
+    warmGlow: 0.085,
+    coolShade: 0.065,
+    vignette: 0.13,
+  },
+};
+
 const selections = [
   {
     slug: "jeju-grand-highlights-loop",
@@ -63,7 +144,7 @@ const selections = [
   },
   {
     slug: "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
-    source: "assets/tour-thumbnails/ai-sources/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.png",
+    source: "assets/tour-thumbnails/ai-retouched/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-editorial-v2.png",
     focal: "attention",
     treatment: "new-ai-source",
     rationale: "A realistic Eobi ice wall fixes the previous non-winter mismatch.",
@@ -77,7 +158,7 @@ const selections = [
   },
   {
     slug: "busan-private-car-charter-cruise-shore",
-    source: "assets/tour-thumbnails/ai-sources/busan-private-car-charter-cruise-shore.png",
+    source: "assets/tour-thumbnails/ai-retouched/busan-private-car-charter-cruise-shore-editorial-v2.png",
     focal: "attention",
     treatment: "new-ai-source",
     rationale: "The cruise ship and private pickup service are readable in the same frame.",
@@ -98,7 +179,7 @@ const selections = [
   },
   {
     slug: "busan-private-car-charter-city-tour",
-    source: "assets/tour-thumbnails/ai-sources/busan-private-car-charter-city-tour.png",
+    source: "assets/tour-thumbnails/ai-retouched/busan-private-car-charter-city-tour-editorial-v2.png",
     focal: "attention",
     treatment: "new-ai-source",
     rationale: "The private vehicle and Gwangan Bridge communicate both service and place.",
@@ -162,25 +243,86 @@ const selections = [
 ];
 
 function outputPath(slug) {
-  return path.join(outputDir, `${slug}-premium-v1.webp`);
+  return path.join(outputDir, `${slug}-premium-v2.webp`);
 }
+
+function gradeFor(slug) {
+  return { ...DEFAULT_GRADE, ...(GRADE_OVERRIDES[slug] ?? {}) };
+}
+
+function editorialOverlaySvg(width, height, grade) {
+  return Buffer.from(`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="warm" cx="16%" cy="5%" r="74%">
+        <stop offset="0%" stop-color="#ffe4bd" stop-opacity="${grade.warmGlow}"/>
+        <stop offset="58%" stop-color="#ffe4bd" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="cool" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="48%" stop-color="#0a2b38" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#0a2b38" stop-opacity="${grade.coolShade}"/>
+      </linearGradient>
+      <radialGradient id="vignette" cx="50%" cy="44%" r="72%">
+        <stop offset="55%" stop-color="#02070a" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#02070a" stop-opacity="${grade.vignette}"/>
+      </radialGradient>
+      <linearGradient id="veil" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="66%" stop-color="#061015" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#061015" stop-opacity="${grade.bottomVeil}"/>
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#warm)"/>
+    <rect width="100%" height="100%" fill="url(#cool)"/>
+    <rect width="100%" height="100%" fill="url(#vignette)"/>
+    <rect width="100%" height="100%" fill="url(#veil)"/>
+  </svg>`);
+}
+
+function filmGrain(width, height, alpha) {
+  const pixels = Buffer.allocUnsafe(width * height * 4);
+  let state = 0x4a6f7921;
+  for (let i = 0; i < pixels.length; i += 4) {
+    state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+    const value = 104 + ((state >>> 24) % 49);
+    pixels[i] = value;
+    pixels[i + 1] = value;
+    pixels[i + 2] = value;
+    pixels[i + 3] = alpha;
+  }
+  return pixels;
+}
+
+const MASTER_WIDTH = 1600;
+const MASTER_HEIGHT = 1340;
+const MASTER_GRAIN = filmGrain(MASTER_WIDTH, MASTER_HEIGHT, DEFAULT_GRADE.grain);
 
 async function renderThumbnail(item) {
   const sourcePath = path.join(repo, item.source);
   await fs.access(sourcePath);
+  const grade = gradeFor(item.slug);
 
-  await sharp(sourcePath)
+  const graded = await sharp(sourcePath)
     .rotate()
     .flatten({ background: "#f5f5f3" })
-    .resize(1600, 1340, {
+    .resize(MASTER_WIDTH, MASTER_HEIGHT, {
       fit: "cover",
       position: item.focal,
       withoutEnlargement: false,
     })
-    .modulate({ brightness: 1.01, saturation: 0.98 })
-    .linear(1.025, -3)
-    .sharpen({ sigma: 0.72 })
-    .webp({ quality: 87, smartSubsample: true, effort: 5 })
+    .modulate({ brightness: grade.brightness, saturation: grade.saturation })
+    .linear(grade.contrast, grade.offset)
+    .sharpen({ sigma: 0.58 })
+    .toBuffer();
+
+  await sharp(graded)
+    .composite([
+      { input: editorialOverlaySvg(MASTER_WIDTH, MASTER_HEIGHT, grade), blend: "over" },
+      {
+        input: MASTER_GRAIN,
+        raw: { width: MASTER_WIDTH, height: MASTER_HEIGHT, channels: 4 },
+        blend: "soft-light",
+      },
+    ])
+    .webp({ quality: 89, smartSubsample: true, effort: 5 })
     .toFile(outputPath(item.slug));
 
   const metadata = await sharp(outputPath(item.slug)).metadata();
@@ -189,6 +331,7 @@ async function renderThumbnail(item) {
     output: path.relative(repo, outputPath(item.slug)).replaceAll("\\", "/"),
     width: metadata.width,
     height: metadata.height,
+    grade,
   };
 }
 
@@ -233,7 +376,7 @@ async function buildContactSheet(items) {
   })
     .composite(composites)
     .jpeg({ quality: 90, chromaSubsampling: "4:4:4" })
-    .toFile(path.join(reportDir, "final-21-thumbnail-contact-sheet.jpg"));
+    .toFile(path.join(reportDir, "final-21-thumbnail-contact-sheet-v2.jpg"));
 }
 
 async function main() {
@@ -248,7 +391,7 @@ async function main() {
 
   await buildContactSheet(rendered);
   await fs.writeFile(
-    path.join(reportDir, "final-thumbnail-selection-manifest.json"),
+    path.join(reportDir, "final-thumbnail-selection-manifest-v2.json"),
     `${JSON.stringify(rendered, null, 2)}\n`,
     "utf8",
   );

@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "항구 픽업",
         "귀환 보장"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "크루즈 승객을 위해 설계된 대형 버스 부산 해안 당일 투어: 크루즈 터미널 픽업, 8개 대표 명소(해동용궁사, UN기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도해수욕장, 용두산공원) 방문, 출항 전 귀환 보장. 합리적인 가격대 — 소규모 그룹 상품과 동일한 코스, 대형 버스 이용."
     },
@@ -120,8 +120,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "일정 자유 변경",
         "부산 숙소 픽업"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "일행만 타는 전용 차량과 자격증 있는 기사 가이드가 부산 어디든 함께합니다. 추천 코스 세 가지 — 대표 명소를 도는 클래식 코스, 해동 용궁사와 스카이캡슐의 해안 코스, 원도심과 송도를 잇는 코스 — 중 하나로 시작해 스톱을 옮기고 빼고 더하면 그날은 일행의 하루가 됩니다. 숙소 픽업 포함, 5~9시간, 7인까지 차량당 한 가격."
     },
@@ -144,8 +144,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "맞춤형 루트",
         "크루즈 픽업 포함"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
     },
@@ -169,8 +169,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "항구 픽업",
         "8시간 일정"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "크루즈 승객을 위한 부산 소그룹 기항지 투어, 정원 12명 밴으로 운행합니다. 여덟 시간에 아홉 곳 — 해동용궁사, 재한유엔기념공원, 자비 부담 점심, 이어 자갈치시장·BIFF광장·국제시장을 걸어서, 감천문화마을, 송도 구름산책로(케이블카로 스카이파크까지 오르는 것은 현장 선택), 마지막으로 용두산공원입니다. 픽업은 배가 접안하는 크루즈 터미널이며, 귀항은 승선 마감 시각에 맞춥니다."
     },
@@ -195,8 +195,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "해안",
         "문화마을"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
     },
@@ -245,8 +245,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "부산 클래식",
         "연중 운영"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "해동 용궁사 해변 사원, 청사포 & 블루라인 파크(스카이 캡슐 선택 가능), 부산 현지 점심식사, UN 기념 공원, 감천문화마을 알록달록 산비탈, 자갈치 수산시장을 포함한 7개 코스 소그룹 당일 투어. 부산 중심부 3개 픽업 포인트 제공, 공인 영어 가이드 동행, 미니버스 운행(최대 약 12명). 모든 관광지 입장료 무료; 점심 및 선택 티켓만 현장 결제."
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "부산 출발",
         "겨울엔 야경"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v2.webp",
       "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
       "shortCardDescription": "부산 지하철역 3곳에서 출발하는 경주 당일 소그룹 투어. 오후는 차를 세워두고 걷습니다 — 최부자댁에서 월정교, 대릉원에서 황리단길. 마지막은 국립경주박물관, 겨울에는 동궁과 월지 야경."
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "맞춤형",
         "귀선 보장"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "정해진 일정이 아닌, 출항 시간에 맞춰 설계된 8시간 프라이빗 차량 투어. 인천 크루즈 터미널 갱웨이 픽업, 영어 구사 드라이버 가이드, 경복궁, 북촌 한옥마을 + 인사동, 원하시는 점심 식사, N서울타워, 명동 또는 조계사로 이어지는 맞춤형 코스. 드라이버 가이드가 출항 전 60분의 교통 여유 시간을 확보하여 절대 배를 놓치지 않습니다."
     },
@@ -420,8 +420,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "프리미엄 크루즈",
         "소그룹"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "입항 항구에 따라 루트가 달라지는 소그룹 크루즈 기항지 투어입니다. 제주항(북쪽)은 성산일출봉을 경유하는 동해안 유네스코 루트로, 강정항(남쪽)은 한라산 1100고지 + 남해안 지질 명소 + 올레시장 루트로 운행됩니다. 두 루트 모두 여유 있게 크루즈 터미널로 귀환합니다."
     },
@@ -447,8 +447,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "합리적 가격",
         "전 입장료 포함"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다 — 이제 동굴을 먼저 갑니다: 개장 직후 가장 한적한 만장굴, 성읍민속마을, 성산일출봉과 해녀 물질공연(취소 시 해녀박물관), 그리고 늦은 오후의 함덕 서우봉해변 피날레. 2007년 함께 등재된 두 유네스코 세계자연유산, 전 입장료 포함, 공인 영어·중국어 가이드."
     },
@@ -471,8 +471,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "유네스코 3대 명소",
         "당일 여행객에게 최적"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다."
     },
@@ -547,8 +547,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "맞춤형 코스",
         "호텔 픽업 포함"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "공인 드라이버 가이드와 함께하는 9시간 제주 프라이빗 전세 차량. 세 가지 추천 코스(동부, 서부, 남부)로 제주의 인기 명소를 둘러보거나, 유네스코 랜드마크, K-드라마 촬영지, 해변, 차밭, 전통 시장 등으로 나만의 코스를 완성해보세요. 섬 어디서든 호텔 픽업이 포함됩니다."
     },
@@ -574,8 +574,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "합리적인 가격",
         "쇼핑 없음"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "제주 남부 서귀포의 대표 명소를 소그룹으로 둘러보는 당일 투어 — 아시아에서 유일하게 바다로 직접 떨어지는 정방폭포, 외돌개 기암과 올레 7코스 해안 산책, 동아시아 최대 사찰 약천사, 오설록 티 뮤지엄, 그리고 한라산 어승생악 탐방로. 제주시 전역 및 공항 포함 4곳의 픽업 포인트, 공인 영어·중국어 가이드 동반, 정방폭포 외 거의 전 코스 무료 입장, 쇼핑 강요 없음."
     },
@@ -755,8 +755,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "매주 월요일 & 목요일",
         "12시간 일정"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "서울에서 동해안까지 12시간 코치 당일 여행: 설악산 국립공원 하이킹, 절벽 위의 낙산사 방문, 소나무 숲 낙산해수욕장 산책. 매주 월요일과 목요일 출발, 영어 가이드 동반, 홍대 또는 명동에서 왕복 이동 포함."
     },
@@ -780,8 +780,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "입장료 전액 포함",
         "13시간 당일 일정"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "서울 출발 13시간 코치 당일 투어로, 한국에서 가장 많이 촬영되는 당일 여행지 세 곳을 모두 방문합니다: 설악산 국립공원(한국 유일의 유네스코 생물권보전지역), 남이섬(겨울연가의 메타세쿼이아길), 아침고요수목원(5,000여 종의 식물을 보유한 한국 대표 프라이빗 수목원). 전 일정 입장료 포함, 영어 안내 가이드, 홍익대입구역 또는 명동역 픽업."
     },
@@ -832,8 +832,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "완전 맞춤형",
         "서울 호텔 픽업 무료"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "나만의 서울 근교 하루를 완성할 수 있는 프리미엄 10시간 프라이빗 전세 차량 투어입니다. 세 가지 추천 코스 중 선택하세요—남이섬 + 아침고요수목원 + 쁘띠프랑스 + 강촌레일바이크, DMZ + 파주 아울렛, 에버랜드 + 한국민속촌—또는 직접 원하는 일정을 보내주셔도 됩니다. 서울 도심 숙박 고객에게는 호텔 픽업이 무료로 제공됩니다."
     },
@@ -860,8 +860,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "민속촌",
         "당일 여행"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "서울에서 출발하는 소그룹 문화 당일 투어로, 경기도의 네 가지 대조적인 한국 유산과 현대 생활을 경험합니다: 유네스코 세계유산으로 등재된 수원 화성(18세기 성벽과 성문), 조선 시대 재현 행사가 펼쳐지는 화성행궁, 용인의 몰입형 야외 한국민속촌, 그리고 웅장한 4층 규모의 스타필드 수원 도서관. 교통 및 입장료 포함 10시간 투어."
     },
@@ -888,8 +888,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "쇼핑",
         "당일 여행"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "경기도의 대조적인 세 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 18세기 성곽과 행궁을 품은 유네스코 세계문화유산 수원 화성, 일제강점기 금광이었던 광명동굴 내 화려한 LED 지하 테마파크, 4층 규모의 스타필드 라이브러리 수원. 교통 및 입장료 포함, 총 9시간 진행."
     },
@@ -912,8 +912,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "문화유산 + 현대 당일 여행",
         "입장료 포함"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "서울 출발 소그룹 당일 여행으로 한국의 세 가지 대조적인 면을 경험하세요: 유네스코 세계유산으로 등재된 수원 화성(18세기 군사 건축물), 사진 명소로 유명한 스타필드 수원 도서관(현대 문화 아이콘), 그리고 용인 와우정사(거대한 야외 불상과 석종). 교통 및 입장료가 포함된 높은 문화유산 가치의 여행입니다."
     },
@@ -938,8 +938,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "설악산",
         "얼음벽"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "한겨울에만 운행합니다. 눈 덮인 설악산, 서리 앉은 남이섬의 나무 길, 그리고 가평 주민들이 매년 1월 계곡 암벽에 키워 올리는 25미터 얼음벽을 함께 봅니다."
     },
@@ -961,8 +961,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "제주 첫 방문자에게 적합",
         "제주 서남부"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "한라산 1100고지 습지, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리, 이호테우 일몰을 잇는 균형 잡힌 제주 서남부 하루 코스."
     },

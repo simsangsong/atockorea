@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港での送迎",
         "帰港保証"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-cruise-shore-excursion-bus-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選9スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
     },
@@ -120,8 +120,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "行程は自由に変更",
         "釜山ホテル送迎"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-city-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "同行者だけの専用車と、資格を持つドライバーガイドが釜山のどこへでもご案内します。おすすめルート3種 — 定番の人気スポット巡り、海東龍宮寺とスカイカプセルの海岸ルート、旧市街と松島を結ぶルート — から選び、立ち寄り先を入れ替え・削除・追加すれば、その日はお客様だけの一日になります。ホテル送迎込み、5〜9時間、7名まで車両1台の同一料金。"
     },
@@ -144,8 +144,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カスタマイズ可能なルート",
         "クルーズターミナル送迎込み"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-private-car-charter-cruise-shore-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
     },
@@ -169,8 +169,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港でのピックアップ",
         "8時間の行程"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-sightseeing-tour-cruise-passengers-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "クルーズ乗客のための釜山少人数寄港地ツアー、定員12名のバンで運行します。8時間で9か所 — 海東龍宮寺、在韓国連記念公園、自己負担の昼食、続いてチャガルチ市場・BIFFスクエア・国際市場を徒歩で、甘川文化村、松島雲の散歩道（ケーブルカーでスカイパークへ上がるかは現地で選択）、最後に龍頭山公園です。お迎えは船が着岸するクルーズターミナルで、帰着は乗船締切時刻に合わせます。"
     },
@@ -195,8 +195,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "海岸",
         "文化村"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "海岸と丘の村を軸に組んだ釜山の少人数日帰りツアーです。静かな午前の時間帯の海東龍宮寺、無料のガラス床展望台・青沙浦タリットル展望台、青沙浦→尾浦のブルーラインパーク・スカイカプセル（予約時にチケット込み／別を選択）、昼食、甘川文化村、そして無料モノレールが「願いの階段」を登る穴場のタクバッコル壁画村まで。選択制のカプセルを除き、主要な立ち寄り先はすべて入場無料です。"
     },
@@ -245,8 +245,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "釜山定番",
         "通年催行"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-top-attractions-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "釜山の定番スポットを巡る1日7か所の小グループツアー：海辺に立つ海東龍宮寺、チョンサポ＆ブルーラインパーク（スカイカプセルはオプション）、釜山の地元ランチ、国連記念公園、甘川文化村の色鮮やかな丘の街並み、チャガルチ魚市場。釜山中心部の3か所から乗車可能。公認英語ガイド付き、ミニコーチ（最大約12名）。各観光地の入場料は無料。ランチとオプション券のみ当日払い。"
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "釜山発",
         "冬は夜景"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/from-busan-gyeongju-ancient-capital-day-tour-premium-v2.webp",
       "priceLabel": "1名様 US$39（定価$50、22%オフ）",
       "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カスタマイズ可能",
         "帰船保証"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/incheon-seoul-private-car-shore-excursion-cruise-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。"
     },
@@ -420,8 +420,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "プレミアムクルーズ",
         "少人数グループ"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-cruise-shore-excursion-small-group-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "寄港地に合わせてルートが変わる少人数グループ制クルーズ寄港地観光です。済州港（北部）発は城山日出峰を経由する東海岸ユネスコルート、江汀港（南部）発は漢拏山1100高地＋南海岸の地質スポット＋オルレ市場を巡るルートをご案内します。どちらもクルーズターミナルへ余裕を持って帰港します。"
     },
@@ -447,8 +447,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "お得",
         "全入場料込み"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-eastern-unesco-spots-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します — 洞窟を最初に巡る新ルート：開場直後の最も静かな万丈窟、城邑民俗村、城山日出峰と海女の素潜り実演（中止時は海女博物館）、そして夕方前の咸徳ソウボン海水浴場のフィナーレ。2007年にともに登録された2つのユネスコ世界自然遺産、全入場料込み、英語・中国語対応の認定ガイド付き。"
     },
@@ -471,8 +471,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "ユネスコ3遺産",
         "日帰り旅行者に最適"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-grand-highlights-loop-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。"
     },
@@ -545,8 +545,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カスタマイズ可能なルート",
         "ホテル送迎込み"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-island-private-car-charter-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "公認ドライバーガイド付きの済州9時間プライベートチャーター車。おすすめの3コース（東・西・南）では島の人気スポットを巡ることができます。また、ユネスコ世界遺産、韓国ドラマのロケ地、ビーチ、茶畑、伝統市場からオリジナルコースを自由に組み立てることも可能です。島内どこでもホテル送迎が含まれています。"
     },
@@ -572,8 +572,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "お手頃価格",
         "買い物なし"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/jeju-southern-top-unesco-spots-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "済州南部ソギポの定番スポットを少人数で巡る日帰りツアー — アジアで唯一海へ直接落ちる正房瀑布、外突き岩の奇岩とオルレ7コースの海岸散策、東アジア最大の寺院・薬泉寺、オソルロックティーミュージアム、そして漢拏山御乗生岳の登山道。済州市内全域と空港を含む4か所のピックアップポイント、英語・中国語の認定ガイド同行、正房瀑布以外はほぼ全コース入場無料、買い物の押し売りなし。"
     },
@@ -753,8 +753,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "毎週月曜・木曜",
         "12時間の旅"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウルから東海岸へのコーチ12時間日帰りトリップ：雪岳山国立公園をハイキングし、断崖絶壁の洛山寺を訪れ、松林に囲まれた洛山ビーチを散策。毎週月曜・木曜出発、英語ガイド付き、弘大または明洞からの往復送迎込み。"
     },
@@ -778,8 +778,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "入場料すべて込み",
         "13時間の行程"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-seoraksan-nami-island-morning-calm-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発13時間バス日帰りツアーで、韓国で最も写真に撮られる3大スポットを訪問：雪岳山国立公園（韓国唯一のユネスコ生物圏保護区）、南怡島（冬のソナタのメタセコイア並木）、晨静苑（5,000種類の植物を誇る韓国を代表するプライベート樹木園）。入場料すべて込み、英語ガイド付き、弘大入口駅または明洞駅よりピックアップ。"
     },
@@ -830,8 +830,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "完全カスタマイズ可能",
         "ソウルホテル無料送迎"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suburbs-private-chartered-car-10hr-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル近郊での一日を自分でプランニングできる、プレミアム10時間プライベートカーチャーター。おすすめ3ルートからお選びください――ナミ島＋晨静苑＋プチフランス＋江村レールバイク、DMZ＋坡州アウトレット、またはエバーランド＋韓国民俗村――または、ご自身のプランをご送付いただくことも可能です。ソウル市内のホテル滞在のお客様には、無料ホテル送迎が含まれます。"
     },
@@ -858,8 +858,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "民俗村",
         "日帰り旅行"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-folk-village-starfield-library-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウルから京畿道へ向かう少人数文化日帰り旅行。韓国の歴史遺産と現代の暮らしの対照的な4つの側面をめぐります：ユネスコ世界遺産に登録された水原華城（18世紀の城壁と城門）、朝鮮時代の再現イベントが催される復元された華城行宮、龍仁にある没入感あふれる野外型韓国民俗村、そして圧倒的な存在感を放つ4フロアのスターフィールドライブラリー水原。交通費と入場料込みの10時間ツアー。"
     },
@@ -886,8 +886,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "ショッピング",
         "日帰り旅行"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な3つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原。交通費・入場料込みの9時間コースです。"
     },
@@ -910,8 +910,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "世界遺産＋現代文化の日帰り旅行",
         "入場料込み"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-suwon-hwaseong-waujeongsa-starfield-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発の少人数制日帰りツアーで、対照的な韓国の3つの魅力を巡ります：ユネスコ世界遺産に登録された水原華城（18世紀の軍事建築）、フォトジェニックなスターフィールド水原図書館（現代の文化的名所）、龍仁の臥牛精舎（巨大な野外仏像と石鐘）。交通・入場料込みで、充実した世界遺産体験をお届けします。"
     },
@@ -936,8 +936,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "雪岳山（ソラクサン）",
         "氷壁"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "厳冬期のみの運行です。雪に覆われた雪岳山、霜をまとった南怡島の並木道、そして加平の村人が毎年1月に渓谷の岩肌へ育てる高さ25メートルの氷壁を訪ねます。"
     },
@@ -959,8 +959,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "済州島初訪問者に最適",
         "済州島南西部"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/southwest-hallasan-osulloc-aewol-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "漢拏山1100高地の湿地、火山性海岸線、天帝淵滝、オソルロクの茶畑、愛月カフェ通り、梨湖テウの夕日をつなぐ、バランスの取れた済州島南西部の1日コース。"
     },

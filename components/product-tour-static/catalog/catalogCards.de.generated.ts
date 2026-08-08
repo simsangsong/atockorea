@@ -22,8 +22,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Küste",
         "Kulturdörfer"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/busan-small-group-yonggungsa-skycapsule-gamcheon-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Ein Busan-Tag in der Kleingruppe, aufgebaut um die Küste und die Hangdörfer: der Haedong-Yonggungsa-Tempel am Meer in seinem ruhigen Morgenfenster, das kostenlose Daritdol-Observatorium mit Glasboden in Cheongsapo, die Fahrt mit der Sky Capsule im Blueline Park von Cheongsapo nach Mipo (Ticket inbegriffen oder nicht — Sie wählen bei der Buchung), Mittagessen, das Kulturdorf Gamcheon und das kaum bekannte Dakbatgol-Wandmalereidorf, wo eine kostenlose Monorail die „Wunschtreppe“ hinaufgleitet. Jeder Ankerpunkt außer der optionalen Kapsel ist eintrittsfrei."
     },
@@ -101,8 +101,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Seoraksan",
         "Eiswand"
       ],
-      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
-      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v1.webp",
+      "heroImage": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
+      "thumbnail": "/images/tours/catalog-thumbnails/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour-premium-v2.webp",
       "priceLabel": "",
       "shortCardDescription": "Läuft nur im tiefen Winter: Seoraksan unter Schnee, die bereiften Baumalleen der Insel Nami und die 25 Meter hohe Eiswand, die Dorfbewohner in Gapyeong jeden Januar an einer Felswand im Tal wachsen lassen."
     },

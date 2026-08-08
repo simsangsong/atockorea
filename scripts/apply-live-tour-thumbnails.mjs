@@ -37,7 +37,7 @@ async function updateSlug(slug) {
   const files = (await fs.readdir(dir)).filter(
     (file) => file.startsWith(`${slug}.`) && file.endsWith(".json"),
   );
-  const thumbnail = `/images/tours/catalog-thumbnails/${slug}-premium-v1.webp`;
+  const thumbnail = `/images/tours/catalog-thumbnails/${slug}-premium-v2.webp`;
 
   for (const file of files) {
     const filePath = path.join(dir, file);

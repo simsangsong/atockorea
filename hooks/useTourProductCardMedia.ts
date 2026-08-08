@@ -5,7 +5,7 @@ import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes"
 
 const EMPTY_MEDIA: TourProductCardMediaMap = {};
 const CURATED_CATALOG_THUMBNAIL_PREFIX = "/images/tours/catalog-thumbnails/";
-const CURATED_CATALOG_V1_RELEASE_MS = Date.parse("2026-08-08T00:00:00.000Z");
+const CURATED_CATALOG_RELEASE_MS = Date.parse("2026-08-08T13:00:00.000Z");
 
 type MediaState = {
   key: string;
@@ -90,14 +90,14 @@ export function getCardImageFromAdminMedia(
 ): string {
   const media = mediaBySlug[slug];
   const adminUpdatedMs = media?.updatedAt ? Date.parse(media.updatedAt) : Number.NaN;
-  const isBundledCatalogV1 = fallbackImage.startsWith(CURATED_CATALOG_THUMBNAIL_PREFIX);
+  const isBundledCuratedCatalog = fallbackImage.startsWith(CURATED_CATALOG_THUMBNAIL_PREFIX);
 
   // The August 2026 catalogue release ships versioned thumbnails in the app
   // bundle. Older database rows must not mask that release, while any admin
   // save made after it should still take precedence as usual.
   if (
-    isBundledCatalogV1 &&
-    (!Number.isFinite(adminUpdatedMs) || adminUpdatedMs < CURATED_CATALOG_V1_RELEASE_MS)
+    isBundledCuratedCatalog &&
+    (!Number.isFinite(adminUpdatedMs) || adminUpdatedMs < CURATED_CATALOG_RELEASE_MS)
   ) {
     return fallbackImage;
   }
