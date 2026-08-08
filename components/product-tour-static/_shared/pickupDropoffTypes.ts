@@ -36,3 +36,13 @@ export type PickupDropoffSection = {
   return: PickupDropoffPoint[];
   notes?: string[];
 };
+
+/**
+ * Cruise rows carry descriptive `time` values ("Confirmed at booking (≈30 min
+ * after ship docking)") instead of clock times. Layout slots sized for "08:30"
+ * must check this before rendering — a sentence in a `flex-shrink-0` time slot
+ * crushes the sibling column into vertical per-letter wrapping.
+ */
+export function isClockTime(time: string | null | undefined): time is string {
+  return !!time && /^\s*[~≈]?\s*\d{1,2}:\d{2}\s*(?:[ap]\.?m\.?)?\s*$/i.test(time);
+}

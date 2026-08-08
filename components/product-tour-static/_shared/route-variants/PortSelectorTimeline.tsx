@@ -29,7 +29,7 @@ function VariantStopCard({
   onClick: () => void;
 }) {
   return (
-    <div className="relative pl-11">
+    <div className="relative pl-12">
       {stop.number < totalStops && (
         <div className="absolute left-[17.5px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-300/60 to-transparent" />
       )}
@@ -98,13 +98,30 @@ export function PortSelectorTimeline({
   const totalStops = selected.stops.length;
 
   return (
-    <div className="space-y-5">
-      <div className="rounded-2xl border border-border bg-white p-4 shadow-premium">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          <Ship className="h-3.5 w-3.5 text-primary" />
-          <span>{sectionUi.portSelectorEyebrow ?? "Choose your docking port"}</span>
+    <div>
+      {/* Port chooser lives ON the timeline rail — same 48px card inset and a
+          node bubble like every stop below it. It used to span the full column
+          width, the only card in the rail that did. */}
+      <div className="relative pl-12 pb-4">
+        <div className="absolute left-[17.5px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-300/60 to-transparent" />
+        <div
+          className="absolute left-0 top-1.5 flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-white"
+          style={{
+            background: "linear-gradient(140deg, #ffffff 0%, #f1f5f9 100%)",
+            boxShadow:
+              "0 1px 2px rgba(15,23,42,0.06), 0 4px 12px -4px rgba(15,23,42,0.10), inset 0 0.5px 0 rgba(255,255,255,0.9)",
+            color: "#334155",
+          }}
+        >
+          <Ship className="h-4 w-4" />
         </div>
-        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+
+        <div className="rounded-2xl border border-border bg-white p-4 shadow-premium">
+        <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          {sectionUi.portSelectorEyebrow ?? "Choose your docking port"}
+        </div>
+        {/* Always one row — the two ports are peers; stacking read as a list. */}
+        <div className="mt-3 grid grid-cols-2 gap-2">
           {routeVariants.map((variant, index) => {
             const isActive = index === safeIndex;
             return (
@@ -113,7 +130,7 @@ export function PortSelectorTimeline({
                 type="button"
                 onClick={() => onPortChange(index)}
                 className={cn(
-                  "group flex items-start gap-3 rounded-xl border px-4 py-3 text-left transition-all duration-200",
+                  "group flex items-start gap-2.5 rounded-xl border px-3 py-2.5 text-left transition-all duration-200 sm:gap-3 sm:px-4 sm:py-3",
                   isActive
                     ? "border-transparent bg-foreground text-white shadow-premium-elevated"
                     : "border-border bg-white text-foreground hover:border-primary/30 hover:shadow-premium",
@@ -121,18 +138,20 @@ export function PortSelectorTimeline({
               >
                 <span
                   className={cn(
-                    "mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full",
+                    "mt-0.5 hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-full sm:flex",
                     isActive ? "bg-white/10 text-white" : "bg-muted/70 text-foreground",
                   )}
                 >
                   <Anchor className="h-4 w-4" />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-semibold tracking-tight">{variant.title}</p>
+                  <p className="text-[13px] font-semibold leading-tight tracking-tight sm:text-sm">
+                    {variant.title}
+                  </p>
                   {variant.dockingPort?.name ? (
                     <p
                       className={cn(
-                        "mt-1 truncate text-xs",
+                        "mt-1 truncate text-[11px] sm:text-xs",
                         isActive ? "text-white/80" : "text-muted-foreground",
                       )}
                     >
@@ -165,6 +184,7 @@ export function PortSelectorTimeline({
         {selected.summary ? (
           <p className="mt-3 text-xs text-muted-foreground leading-relaxed">{selected.summary}</p>
         ) : null}
+        </div>
       </div>
 
       <div>
